@@ -2,7 +2,7 @@ export const company = {
   brand: "L8AI",
   legalNameCn: "杭州来八数智有限公司",
   legalNameEn: "Hangzhou Laiba Digital Intelligence Co., Ltd.",
-  slogan: "8L · xL · xDo 企业 AI 生产化体系",
+  slogan: "产品矩阵 · 八维方法 · 课程体系 · Do 引擎",
   email: "contact@l8ai.cn",
 }
 
@@ -14,30 +14,40 @@ export type NavItem = {
 
 export const navItems: NavItem[] = [
   {
-    label: "8L 产品分层",
+    label: "产品矩阵",
     href: "/products",
     children: [
-      { label: "8L 产品分层总览", href: "/products", desc: "构建企业 AI 生产化操作系统" },
+      { label: "8L 产品矩阵总览", href: "/products", desc: "构建企业 AI 生产化操作系统" },
       { label: "Landscape 场景雷达", href: "/products#layer-01" },
-      { label: "Link 集成平台", href: "/products#layer-04" },
-      { label: "Loop 资产闭环", href: "/products#layer-08" },
+      { label: "Lab 知识实验", href: "/products#layer-03" },
+      { label: "Live 生产治理", href: "/products#layer-07" },
     ],
   },
   {
-    label: "xL 方法论",
+    label: "八维方法",
     href: "/method",
     children: [
-      { label: "xL 交付路径总览", href: "/method", desc: "从真问题到可复用价值的工程化路径" },
-      { label: "Locate / Learn", href: "/method#step-1" },
-      { label: "Layer / Link", href: "/method#step-3" },
-      { label: "Launch / Leverage / Loop", href: "/method#step-5" },
+      { label: "8L 方法论总览", href: "/method", desc: "每一维都有输入、动作、产出与验收" },
+      { label: "机会到方案", href: "/method#method-landscape" },
+      { label: "知识到集成", href: "/method#method-lab" },
+      { label: "上线到复盘", href: "/method#method-launchpad" },
     ],
   },
   {
-    label: "xDo 引擎",
+    label: "课程体系",
+    href: "/courses",
+    children: [
+      { label: "8L 课程设计总览", href: "/courses", desc: "从认知、实战到组织能力建设" },
+      { label: "产品系统工作坊", href: "/courses/8l-product-system" },
+      { label: "交付路径实训", href: "/courses/xl-delivery-method" },
+      { label: "工程工具实验课", href: "/courses/xdo-engineering-tools" },
+    ],
+  },
+  {
+    label: "工程引擎",
     href: "/tools",
     children: [
-      { label: "xDo 工程工具链总览", href: "/tools", desc: "Doops · DoAgent · DoDNS" },
+      { label: "Do 引擎总览", href: "/tools", desc: "Doops · DoAgent · DoDNS" },
       { label: "Doops 部署运维", href: "/tools#doops" },
       { label: "DoAgent 执行引擎", href: "/tools#doagent" },
       { label: "DoDNS 网络治理", href: "/tools#dodns" },
@@ -48,16 +58,12 @@ export const navItems: NavItem[] = [
     href: "/cases",
   },
   {
-    label: "课程",
-    href: "/courses",
-  },
-  {
-    label: "白皮书",
+    label: "资源洞察",
     href: "/whitepapers",
-  },
-  {
-    label: "博客",
-    href: "/blog",
+    children: [
+      { label: "白皮书", href: "/whitepapers", desc: "体系化资料与深度文档" },
+      { label: "博客", href: "/blog", desc: "方法、工程与行业观察" },
+    ],
   },
   {
     label: "关于我们",
@@ -73,13 +79,13 @@ export const heroProof = [
 ]
 
 export const heroMetrics = [
-  { value: "8L", label: "产品能力层" },
-  { value: "7", label: "xL 交付步骤" },
-  { value: "3+", label: "xDo 工具入口" },
-  { value: "4类", label: "交付资产" },
+  { value: "8", label: "产品矩阵层" },
+  { value: "8", label: "方法维度" },
+  { value: "6", label: "课程路径" },
+  { value: "3+", label: "Do 引擎" },
 ]
 
-// ===== 8L 产品分层 =====
+// ===== 8L 产品矩阵 =====
 export type ProductLayer = {
   no: string
   id: string
@@ -165,84 +171,120 @@ export const productLayers: ProductLayer[] = [
   },
 ]
 
-// ===== xL 方法论 =====
-export type MethodStep = {
-  no: string
+// ===== 8L 方法论 =====
+export type MethodDimension = {
   id: string
+  no: string
   code: string
   icon: string
   title: string
-  desc: string
-  bullets: string[]
+  question: string
+  input: string
+  action: string
+  output: string
+  validation: string
 }
 
-export const methodSteps: MethodStep[] = [
+export const methodDimensions: MethodDimension[] = [
   {
-    no: "1",
-    id: "step-1",
-    code: "Locate",
-    icon: "compass",
-    title: "定位真问题",
-    desc: "进入业务一线，识别真正影响指标、流程和采用的 AI 机会。",
-    bullets: ["业务访谈", "问题树拆解", "价值判断"],
+    id: "method-landscape",
+    no: "01",
+    code: "Landscape",
+    icon: "radar",
+    title: "机会定位",
+    question: "企业到底应该先做哪个 AI 场景？",
+    input: "业务目标、流程痛点、人工成本、数据现状、风险边界。",
+    action: "用访谈、问题树和价值评分筛出高价值且可上线的场景。",
+    output: "AI 机会地图、场景优先级、试点候选清单。",
+    validation: "场景有明确业务负责人、指标口径和试点范围。",
   },
   {
-    no: "2",
-    id: "step-2",
-    code: "Learn",
-    icon: "book",
-    title: "学习业务语境",
-    desc: "吸收行业术语、系统现状、数据来源、组织角色和约束条件。",
-    bullets: ["流程学习", "知识盘点", "系统上下文"],
+    id: "method-logic",
+    no: "02",
+    code: "Logic",
+    icon: "workflow",
+    title: "方案成型",
+    question: "模糊诉求如何变成能开发、能验收的方案？",
+    input: "场景清单、用户角色、业务流程、系统边界、成功指标。",
+    action: "把需求拆成 PRD、流程、架构、数据口径和验收标准。",
+    output: "方案蓝图、MVP 范围、里程碑、风险清单。",
+    validation: "业务、技术和管理层对范围、指标、边界达成一致。",
   },
   {
-    no: "3",
-    id: "step-3",
-    code: "Layer",
-    icon: "layers",
-    title: "分层设计",
-    desc: "把需求拆成产品层、数据层、模型层、工具层、权限层和运营层。",
-    bullets: ["8L 映射", "架构分层", "验收边界"],
+    id: "method-lab",
+    no: "03",
+    code: "Lab",
+    icon: "blocks",
+    title: "知识实验",
+    question: "知识、数据和模型效果怎样被验证？",
+    input: "文档、制度、工单、FAQ、数据库字段和真实问题集。",
+    action: "建设知识实验场，跑通 RAG、提示词、权限和引用溯源。",
+    output: "知识资产清单、实验报告、问题集、初版评测结果。",
+    validation: "回答可溯源、权限可控制、失败样本可复盘。",
   },
   {
-    no: "4",
-    id: "step-4",
+    id: "method-link",
+    no: "04",
     code: "Link",
     icon: "link",
-    title: "连接系统",
-    desc: "打通知识库、API、MCP、Agent 工具、权限、审计和企业业务系统。",
-    bullets: ["数据接入", "工具调用", "集成联调"],
+    title: "系统连接",
+    question: "AI 如何从会回答变成会执行？",
+    input: "企业 API、MCP 工具、权限策略、审计要求、业务系统。",
+    action: "封装工具、连接系统、定义调用边界与人工确认点。",
+    output: "Agent 工具清单、MCP/API 连接方案、权限审计方案。",
+    validation: "关键任务能闭环执行，调用链路可追踪、可回滚。",
   },
   {
-    no: "5",
-    id: "step-5",
-    code: "Launch",
+    id: "method-launchpad",
+    no: "05",
+    code: "Launchpad",
+    icon: "circleCheck",
+    title: "应用交付",
+    question: "试点应用怎样从 Demo 变成可交付系统？",
+    input: "方案蓝图、知识实验结果、系统连接能力、试点用户。",
+    action: "用交付脚手架完成前后端、权限、日志、灰度和部署。",
+    output: "可上线应用、试点计划、培训材料、上线清单。",
+    validation: "试点用户能完成真实流程，异常路径有处理方案。",
+  },
+  {
+    id: "method-learn",
+    no: "06",
+    code: "Learn",
     icon: "rocket",
-    title: "验证试点",
-    desc: "用小范围试点验证质量、流程、成本、用户采用和上线条件。",
-    bullets: ["试点上线", "Eval 评测", "问题闭环"],
+    title: "评测学习",
+    question: "AI 效果如何持续变好而不是靠感觉判断？",
+    input: "真实问题、用户反馈、模型输出、失败案例、业务指标。",
+    action: "建立 Eval、Rubric、回归测试和反馈闭环。",
+    output: "评测看板、质量报告、改进 backlog、回归测试集。",
+    validation: "每次迭代能证明质量变化，关键失败不重复出现。",
   },
   {
-    no: "6",
-    id: "step-6",
-    code: "Leverage",
-    icon: "rocket",
-    title: "规模上线",
-    desc: "把验证过的能力复制到更多团队、流程和业务场景，形成组织杠杆。",
-    bullets: ["上线发布", "扩展推广", "培训赋能"],
-  },
-  {
-    no: "7",
-    id: "step-7",
-    code: "Loop",
+    id: "method-live",
+    no: "07",
+    code: "Live",
     icon: "activity",
-    title: "运营复盘",
-    desc: "用运行数据、用户反馈和项目复盘持续改进，并沉淀可复用资产。",
-    bullets: ["LiveOps 运营", "复盘改进", "资产沉淀"],
+    title: "生产运营",
+    question: "AI 上线后如何稳定、可控、可治理？",
+    input: "运行日志、成本数据、权限审计、用户行为、告警事件。",
+    action: "建立 LiveOps 监控、成本、审计、安全和应急机制。",
+    output: "生产看板、运维 runbook、成本策略、风险响应流程。",
+    validation: "服务可观测、成本可解释、事故可追踪、风险可处置。",
+  },
+  {
+    id: "method-loop",
+    no: "08",
+    code: "Loop",
+    icon: "shield",
+    title: "资产复用",
+    question: "一次项目怎样沉淀成下一次更快交付的资产？",
+    input: "项目复盘、模板、连接器、评测集、运营记录、客户反馈。",
+    action: "沉淀 Playbook、课程、模板、行业包和复用组件。",
+    output: "FDE Playbook、课程素材、方案包、复用资产库。",
+    validation: "新项目能复用旧资产，交付周期和沟通成本下降。",
   },
 ]
 
-// ===== xDo 工具 =====
+// ===== Do 引擎 =====
 export type DoTool = {
   id: string
   icon: string
@@ -296,7 +338,7 @@ export const doTools: DoTool[] = [
 ]
 
 export const knowledgeItems = [
-  { id: "knowledge-methods", icon: "compass", title: "方法论与指南", desc: "FDE、8L、xL、xDo 的流程指引、决策框架与交付标准。" },
+  { id: "knowledge-methods", icon: "compass", title: "方法论与指南", desc: "FDE、产品矩阵、八维方法、Do 引擎的流程指引、决策框架与交付标准。" },
   { id: "knowledge-scenarios", icon: "workflow", title: "行业与场景库", desc: "沉淀制造、教育、零售、金融、政企等场景的 AI 机会地图和方案参考。" },
   { id: "knowledge-tools", icon: "book", title: "模板与工具", desc: "访谈脚本、PRD 模板、Eval 数据集、上线清单和 Do 系列自动化脚本。" },
   { id: "knowledge-cases", icon: "chat", title: "案例与复盘", desc: "把项目问题、技术路径、上线闸口和复盘结论转成可复用 playbook。" },
@@ -355,7 +397,7 @@ export const caseCards: CaseCard[] = [
 
 export const footerColumns: { title: string; links: { label: string; href: string }[] }[] = [
   {
-    title: "8L 产品分层",
+    title: "产品矩阵",
     links: [
       { label: "场景雷达", href: "/products#layer-01" },
       { label: "方案工作台", href: "/products#layer-02" },
@@ -363,15 +405,15 @@ export const footerColumns: { title: string; links: { label: string; href: strin
     ],
   },
   {
-    title: "xL 方法论",
+    title: "八维方法",
     links: [
-      { label: "问题定位", href: "/method#step-1" },
-      { label: "系统连接", href: "/method#step-4" },
-      { label: "运营复盘", href: "/method#step-7" },
+      { label: "机会定位", href: "/method#method-landscape" },
+      { label: "系统连接", href: "/method#method-link" },
+      { label: "资产复用", href: "/method#method-loop" },
     ],
   },
   {
-    title: "xDo 工程引擎",
+    title: "工程引擎",
     links: [
       { label: "Doops", href: "/tools#doops" },
       { label: "DoAgent", href: "/tools#doagent" },

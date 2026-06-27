@@ -6,13 +6,16 @@ export const maxDuration = 30
 const SYSTEM_PROMPT = `你是 L8AI（杭州来八数智有限公司）官网的 AI 助手，名字叫"来八助手"。
 L8AI 帮助企业把 AI 从 Demo 推进到可上线、可评测、可运营的生产系统，核心体系是：
 
-【8L 产品分层】构建企业 AI 生产化操作系统：
+【产品矩阵】8L 产品矩阵构建企业 AI 生产化操作系统：
 01 AI 场景雷达(Landscape)、02 AI 方案工作台(Logic)、03 企业知识与 RAG(Lab)、04 Agent 与 MCP 集成(Link)、05 AI 应用交付脚手架(Launchpad)、06 Eval 与反馈学习(Learn)、07 AI LiveOps 生产治理(Live)、08 FDE Playbook 资产库(Loop)。
 
-【xL 方法论】从真问题到可复用价值的工程化交付路径：
-Locate 定位、Learn 学习、Layer 分层、Link 连接、Launch 试点、Leverage 复制、Loop 复盘。
+【八维方法】把 8L 产品矩阵转化为企业 AI 落地方法：
+每一维都说明问题、输入、动作、产出和验收标准，覆盖机会定位、方案成型、知识实验、系统连接、应用交付、评测学习、生产运营和资产复用。
 
-【xDo 工具】支撑真实交付的工程引擎：
+【课程体系】把产品矩阵与八维方法训练成团队能力：
+每个课程模块都有学习目标、真实任务、交付物和验收方式。
+
+【Do 引擎】支撑真实交付的工程引擎：
 Doops（部署运维与远程执行）、DoAgent（Agent 编排与任务执行）、DoDNS（域名证书与入口路由治理）。
 
 L8AI 还提供企业 AI 生产化课程、场景样板和博客洞察。
@@ -21,24 +24,24 @@ L8AI 还提供企业 AI 生产化课程、场景样板和博客洞察。
 
 const SITE_ANSWERS = [
   {
-    patterns: [/8l/i, /product stratification/i, /product tier/i, /产品分层/, /八大产品/, /八层/],
+    patterns: [/8l/i, /product stratification/i, /product tier/i, /产品矩阵/, /产品分层/, /八大产品/, /八层/],
     answer:
-      "8L 产品分层是 L8AI 的企业 AI 生产化操作系统，把 AI 从 Demo 到生产系统拆成八个可交付层：\n· Landscape：AI 场景雷达，识别高价值业务场景\n· Logic：AI 方案工作台，沉淀方案、架构与验收指标\n· Lab：企业知识与 RAG，建设可验证知识应用\n· Link：Agent 与 MCP 集成，连接工具和业务系统\n· Launchpad：AI 应用交付脚手架，形成可上线应用\n· Learn：Eval 与反馈学习，持续评测改进\n· Live：AI LiveOps 生产治理，监控、审计、成本与回滚\n· Loop：FDE Playbook 资产库，把经验沉淀为可复用资产",
+      "产品矩阵是 L8AI 的 8L 企业 AI 生产化操作系统，把 AI 从 Demo 到业务系统拆成八个产品层：\n· Landscape：AI 场景雷达，识别高价值业务场景\n· Logic：AI 方案工作台，沉淀方案、架构与验收指标\n· Lab：企业知识与 RAG，建设可验证知识应用\n· Link：Agent 与 MCP 集成，连接工具和业务系统\n· Launchpad：AI 应用交付脚手架，形成可上线应用\n· Learn：Eval 与反馈学习，持续评测改进\n· Live：AI LiveOps 生产治理，监控、审计、成本与回滚\n· Loop：FDE Playbook 资产库，把经验沉淀为可复用资产",
   },
   {
-    patterns: [/xl/i, /xL/, /方法论/, /methodology/i, /fde/i],
+    patterns: [/八维方法/, /8l.*方法/i, /methodology/i, /方法论/, /fde/i, /xl/i, /xL/],
     answer:
-      "xL 方法论是 L8AI 从真问题到可复用价值的工程化路径：Locate 定位问题，Learn 学习业务，Layer 分层建模，Link 连接系统，Launch 试点上线，Leverage 规模复制，Loop 复盘沉淀。它的目标是让 AI 交付可评测、可运营、可复用。",
+      "八维方法是 L8AI 把 8L 产品矩阵转成落地动作的方法论。每一维都回答五件事：问题是什么、输入是什么、动作是什么、产出是什么、怎么验收。它覆盖机会定位、方案成型、知识实验、系统连接、应用交付、评测学习、生产运营和资产复用。",
   },
   {
-    patterns: [/xdo/i, /doops/i, /doagent/i, /dodns/i, /工具/, /engine/i],
+    patterns: [/do 引擎/i, /do引擎/i, /xdo/i, /doops/i, /doagent/i, /dodns/i, /工具/, /engine/i],
     answer:
-      "xDo 是 L8AI 的工程引擎系列，用来支撑真实交付：Doops 负责部署运维与远程执行，DoAgent 负责 Agent 编排与任务执行，DoDNS 负责域名、证书与入口路由治理。它们共同把方法论落到可运行的业务系统里。",
+      "Do 引擎是 L8AI 的工程工具系列，用来支撑真实交付：Doops 负责部署运维与远程执行，DoAgent 负责 Agent 编排与任务执行，DoDNS 负责域名、证书与入口路由治理。它们共同把产品矩阵和八维方法落到可运行的业务系统里。",
   },
   {
-    patterns: [/课程/, /training/i, /course/i, /实战/, /学习/],
+    patterns: [/课程体系/, /课程/, /training/i, /course/i, /实战/, /学习/],
     answer:
-      "L8AI 的课程围绕企业 AI 生产化展开，覆盖场景识别、知识库/RAG、Agent 集成、应用交付、Eval 评测和 LiveOps 治理。课程不是只做工具演示，而是帮助团队建立能复用到真实业务的交付方法和工程资产。",
+      "L8AI 的课程体系围绕 8L 展开，每个模块都有学习目标、真实任务、交付物和验收方式。课程覆盖场景识别、方案设计、知识库/RAG、Agent 集成、应用交付、Eval 评测、LiveOps 治理和资产复用，目标是把方法训练成团队能力。",
   },
   {
     patterns: [/预约/, /咨询/, /contact/i, /合作/, /pricing/i, /price/i],
@@ -86,7 +89,7 @@ function createAssistantTextResponse(text: string) {
 function createConfigurationMessage(question: string) {
   return (
     getSiteAnswer(question) ??
-    "当前模型服务还没有配置 MINIMAX_API_KEY，我可以先回答 L8AI 官网基础问题，例如 8L 产品分层、xL 方法论、xDo 工具链、课程和预约咨询。更深入的开放问题请联系 contact@l8ai.cn。"
+    "当前模型服务还没有配置 MINIMAX_API_KEY，我可以先回答 L8AI 官网基础问题，例如产品矩阵、八维方法、课程体系、Do 引擎和预约咨询。更深入的开放问题请联系 contact@l8ai.cn。"
   )
 }
 

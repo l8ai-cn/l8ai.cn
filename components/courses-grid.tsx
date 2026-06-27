@@ -6,9 +6,9 @@ import { Icon } from "@/components/icon"
 import { courses, courseTracks, type Course } from "@/lib/courses"
 
 const trackLabel: Record<Course["track"], string> = {
-  "8L": "8L 产品课",
-  xL: "xL 方法课",
-  xDo: "xDo 工具课",
+  "8L": "产品矩阵课",
+  xL: "八维方法课",
+  xDo: "Do 引擎课",
   Operations: "运营治理课",
 }
 

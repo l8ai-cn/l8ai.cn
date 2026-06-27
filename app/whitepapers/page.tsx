@@ -6,7 +6,7 @@ import { whitepapers } from "@/lib/whitepapers"
 
 export const metadata: Metadata = {
   title: "白皮书",
-  description: "L8AI 8L 产品分层、xL 方法论、xDo 工程引擎的完整白皮书文档。",
+  description: "L8AI 产品矩阵、八维方法、课程体系和 Do 引擎的完整白皮书文档。",
 }
 
 function formatDate(d: string) {
@@ -20,7 +20,7 @@ export default function WhitepapersPage() {
       <PageHeader
         eyebrow="WHITEPAPERS"
         title="白皮书与技术文档"
-        desc="深入了解 L8AI 的 8L 产品分层、xL 方法论与 xDo 工程引擎。每一份白皮书都凝结了我们在企业 AI 生产化一线的实践与思考。"
+        desc="深入了解 L8AI 的产品矩阵、八维方法、课程体系与 Do 引擎。每一份白皮书都凝结了我们在企业 AI 生产化一线的实践与思考。"
       />
 
       <section className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">

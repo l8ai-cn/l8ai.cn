@@ -20,15 +20,100 @@ export type Course = {
 }
 
 export const courseCatalogIntro = {
-  title: "课程体系：把 FDE、8L、xL、xDo 训练成团队能力",
-  desc: "从业务问题发现、系统集成、RAG/Agent/Eval 到上线运营，帮助团队形成能交付生产级 AI 系统的学习路径。",
+  title: "课程体系：把 8L 方法训练成团队能力",
+  desc: "课程体系回答“团队怎样学会并复用这套方法”。从业务场景、产品矩阵、知识实验、Agent 集成、Eval 评测到生产运营，每门课都要求产出可验收交付物。",
 }
 
 export const courseTracks: Array<{ label: string; track: Course["track"] }> = [
-  { label: "8L 产品课", track: "8L" },
-  { label: "xL 方法课", track: "xL" },
-  { label: "xDo 工具课", track: "xDo" },
+  { label: "产品矩阵课", track: "8L" },
+  { label: "八维方法课", track: "xL" },
+  { label: "Do 引擎课", track: "xDo" },
   { label: "运营治理课", track: "Operations" },
+]
+
+export type CourseDesignModule = {
+  no: string
+  layer: string
+  title: string
+  goal: string
+  task: string
+  deliverable: string
+  assessment: string
+}
+
+export const courseDesignModules: CourseDesignModule[] = [
+  {
+    no: "01",
+    layer: "Landscape",
+    title: "AI 场景识别与机会评分",
+    goal: "能从业务目标和流程痛点中筛选值得做的 AI 场景。",
+    task: "访谈一个真实业务流程，完成机会地图和优先级排序。",
+    deliverable: "AI 机会地图、场景评分表。",
+    assessment: "场景是否有负责人、指标、数据条件和试点边界。",
+  },
+  {
+    no: "02",
+    layer: "Logic",
+    title: "AI 方案设计与验收定义",
+    goal: "能把模糊需求转成可开发、可验收的 AI 方案。",
+    task: "为一个优先场景写出 PRD、流程图、风险清单和验收指标。",
+    deliverable: "AI 方案蓝图、验收标准。",
+    assessment: "业务、技术、管理三方是否能按同一方案推进。",
+  },
+  {
+    no: "03",
+    layer: "Lab",
+    title: "企业知识与 RAG 实验",
+    goal: "能把文档和业务知识转成可测试的知识应用。",
+    task: "整理知识资产，构建问题集，完成一次 RAG 实验。",
+    deliverable: "知识资产清单、RAG 实验报告。",
+    assessment: "答案是否可溯源，失败样本是否能定位原因。",
+  },
+  {
+    no: "04",
+    layer: "Link",
+    title: "Agent 工具与系统连接",
+    goal: "能让 AI 通过工具调用进入真实业务流程。",
+    task: "设计 Agent 工具清单，完成一个 API/MCP 调用链路。",
+    deliverable: "工具调用方案、权限审计表。",
+    assessment: "调用边界是否清楚，执行过程是否可追踪。",
+  },
+  {
+    no: "05",
+    layer: "Launchpad",
+    title: "试点应用交付",
+    goal: "能把 Demo 做成小范围可上线的试点应用。",
+    task: "完成试点应用原型、上线清单和用户培训材料。",
+    deliverable: "试点应用包、发布计划。",
+    assessment: "用户是否能完成真实流程，异常路径是否有处理方案。",
+  },
+  {
+    no: "06",
+    layer: "Learn",
+    title: "Eval 评测与反馈学习",
+    goal: "能用数据判断 AI 效果，而不是靠主观感觉。",
+    task: "建立评测集、rubric、回归测试和反馈看板。",
+    deliverable: "Eval 报告、改进 backlog。",
+    assessment: "质量变化是否可量化，关键失败是否可复现。",
+  },
+  {
+    no: "07",
+    layer: "Live",
+    title: "生产运营与治理",
+    goal: "能让 AI 应用上线后持续稳定、可控、可审计。",
+    task: "设计监控、成本、权限、安全和应急 runbook。",
+    deliverable: "LiveOps 看板、治理方案。",
+    assessment: "运行、成本、安全和事故处理是否有闭环。",
+  },
+  {
+    no: "08",
+    layer: "Loop",
+    title: "资产沉淀与复用",
+    goal: "能把一次项目沉淀为下一次可复用的组织资产。",
+    task: "把项目复盘整理成模板、课程素材、连接器和行业包。",
+    deliverable: "FDE Playbook、复用资产清单。",
+    assessment: "新项目是否能直接复用资产并缩短交付周期。",
+  },
 ]
 
 export const courses: Course[] = [
@@ -42,12 +127,12 @@ export const courses: Course[] = [
     level: "入门到进阶",
     outcome: "完成一份企业 AI 机会地图与首个落地路线图。",
     pageTitle: "AI FDE Foundation Bootcamp",
-    summary: "用 8L / xL / xDo 建立企业 AI 生产化的共同语言，识别可做、值得做、能上线、能运营的业务场景。",
+    summary: "用产品矩阵、八维方法和 Do 引擎建立企业 AI 生产化的共同语言，识别可做、值得做、能上线、能运营的业务场景。",
     modules: [
       { title: "AI 生产化全景", objective: "区分 Demo、工具、系统和业务闭环。", deliverable: "AI 生产化成熟度自评表" },
       { title: "8L 体系导入", objective: "用八层结构拆解 AI 产品能力。", deliverable: "8L 能力拆解图" },
       { title: "xL 方法导入", objective: "掌握从定位到复盘的交付路径。", deliverable: "xL 项目路径图" },
-      { title: "xDo 工程导入", objective: "理解 Do 系列工具如何支撑运行。", deliverable: "工具选型清单" },
+      { title: "Do 引擎导入", objective: "理解 Do 系列工具如何支撑运行。", deliverable: "工具选型清单" },
     ],
     tools: ["8L Canvas", "xL Delivery Map", "Opportunity Scorecard"],
   },
@@ -74,7 +159,7 @@ export const courses: Course[] = [
     id: "xl-delivery-method",
     track: "xL",
     title: "xL Delivery Method Practicum",
-    subtitle: "xL 交付路径实训",
+    subtitle: "八维方法交付路径实训",
     audience: "交付经理、FDE、解决方案工程师、客户成功团队",
     duration: "4 周项目制",
     level: "进阶到专业",
@@ -92,19 +177,19 @@ export const courses: Course[] = [
   {
     id: "xdo-engineering-tools",
     track: "xDo",
-    title: "xDo Engineering Tools Lab",
+    title: "Do Engineering Tools Lab",
     subtitle: "Do 系列工程工具实验课",
     audience: "工程师、运维、平台团队、技术负责人",
     duration: "5 天实验课",
     level: "专业",
     outcome: "完成 Doops、DoAgent、DoDNS 支撑的 AI 应用发布与诊断流程。",
-    pageTitle: "xDo Engineering Tools Lab",
+    pageTitle: "Do Engineering Tools Lab",
     summary: "围绕 Doops、DoAgent、DoDNS 建立部署、执行、域名证书和运行诊断的工程能力。",
     modules: [
       { title: "Doops 发布与运维", objective: "掌握远程执行、集群发布和运行检查。", deliverable: "Doops 部署 runbook" },
       { title: "DoAgent 执行引擎", objective: "配置 Agent 任务、工具调用和执行链路。", deliverable: "Agent 工具链 Demo" },
       { title: "DoDNS 入口治理", objective: "配置域名、证书、Ingress 和验证闭环。", deliverable: "DNS/TLS 检查清单" },
-      { title: "xDo 综合演练", objective: "完成一次从开发到上线的端到端发布。", deliverable: "综合交付报告" },
+      { title: "Do 引擎综合演练", objective: "完成一次从开发到上线的端到端发布。", deliverable: "综合交付报告" },
     ],
     tools: ["Doops", "DoAgent", "DoDNS", "Kubernetes", "Ingress"],
   },

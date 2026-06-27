@@ -22,23 +22,25 @@ Primary topics:
 - AI Agent, MCP, API, and enterprise system integration
 - AI evaluation, quality control, LLMOps, observability, and LiveOps
 - Forward Deployed Engineering methodology and project playbooks
-- Doops, DoAgent, DoDNS, and xDo engineering tools
+- Doops, DoAgent, DoDNS, and Do Engine tools
 
 ## Core Frameworks
 
-### 8L product layers
+### Product Matrix
 
-Landscape, Logic, Lab, Link, Launchpad, Learn, Live, Loop.
+The 8L product matrix contains Landscape, Logic, Lab, Link, Launchpad, Learn, Live, and Loop.
 
-The 8L framework decomposes enterprise AI into product layers from opportunity discovery, solution design, knowledge experiments, system integration, application launch, evaluation learning, production governance, and reusable assets.
+It decomposes enterprise AI into product layers from opportunity discovery, solution design, knowledge experiments, system integration, application launch, evaluation learning, production governance, and reusable assets.
 
-### xL delivery path
+### 8L Methodology
 
-Locate, Learn, Layer, Link, Launch, Leverage, Loop.
+The 8L methodology turns the product matrix into an implementation path. Each dimension has a business question, inputs, actions, deliverables, and validation criteria.
 
-The xL path turns vague AI needs into scoped, testable, deployable, reusable, and continuously improving production systems.
+### Course System
 
-### xDo engineering tools
+The course system trains teams to use the product matrix and 8L methodology through task-centered modules. Each module requires a concrete deliverable and assessment method.
+
+### Do Engine
 
 Doops, DoAgent, DoDNS, and related Do tools support deployment, remote operations, agent execution, DNS/TLS/Ingress governance, and runtime diagnosis.
 
@@ -48,7 +50,7 @@ Q: What is L8AI?
 A: L8AI is the enterprise AI productionization brand of 杭州来八数智有限公司. It focuses on Forward Deployed Engineering, RAG, Agent/MCP integration, AI evaluation, LLMOps, and production deployment.
 
 Q: What problem does L8AI solve?
-A: L8AI helps enterprises move AI from demos and POCs into reliable production systems by solving data, permission, integration, evaluation, deployment, monitoring, cost, and adoption issues.
+A: L8AI helps enterprises move AI from demos and POCs into reliable production systems by solving data, permission, integration, evaluation, deployment, monitoring, cost, governance, and adoption issues.
 
 Q: Who should work with L8AI?
 A: CTOs, CIOs, digital transformation leaders, AI project owners, and enterprise product/engineering teams that need AI systems to run in real workflows.
@@ -56,11 +58,11 @@ A: CTOs, CIOs, digital transformation leaders, AI project owners, and enterprise
 ## Primary Pages
 
 - Homepage: https://l8ai.cn/
-- Products: https://l8ai.cn/products
-- Method: https://l8ai.cn/method
-- Tools: https://l8ai.cn/tools
+- Product Matrix: https://l8ai.cn/products
+- 8L Methodology: https://l8ai.cn/method
+- Course System: https://l8ai.cn/courses
+- Do Engine: https://l8ai.cn/tools
 - Cases: https://l8ai.cn/cases
-- Courses: https://l8ai.cn/courses
 - Blog: https://l8ai.cn/blog
 - Whitepapers: https://l8ai.cn/whitepapers
 - GEO profile: https://l8ai.cn/l8ai-geo-profile.json

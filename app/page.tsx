@@ -2,19 +2,19 @@ import Link from "next/link"
 import { Hero } from "@/components/home/hero"
 import { Icon } from "@/components/icon"
 import { SectionTitle, CTA } from "@/components/ui-bits"
-import { productLayers, methodSteps, doTools, caseCards } from "@/lib/site-content"
+import { productLayers, methodDimensions, doTools, caseCards } from "@/lib/site-content"
 
 export default function HomePage() {
   return (
     <main>
       <Hero />
 
-      {/* 8L 产品分层 */}
+      {/* 产品矩阵 */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <SectionTitle
-          eyebrow="8L 产品分层"
-          title="8L 产品分层：构建企业 AI 生产化操作系统"
-          desc="从机会识别、知识实验、系统连接到上线治理，覆盖企业 AI 的全生命周期。"
+          eyebrow="产品矩阵"
+          title="8L 产品矩阵：构建企业 AI 生产化操作系统"
+          desc="从机会识别、知识实验、系统连接到上线治理，定义企业 AI 系统应该具备的八个产品能力层。"
         />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {productLayers.map((layer) => (
@@ -42,21 +42,21 @@ export default function HomePage() {
             href="/products"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
           >
-            查看 8L 产品体系详情 <Icon name="arrow" size={16} />
+            查看产品矩阵详情 <Icon name="arrow" size={16} />
           </Link>
         </div>
       </section>
 
-      {/* xL 方法论 */}
+      {/* 八维方法 */}
       <section className="border-y border-border bg-soft">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <SectionTitle
-            eyebrow="xL 方法论"
-            title="xL 方法论：从真问题到可复用价值"
-            desc="Locate、Learn、Layer、Link、Launch、Leverage、Loop，把业务语境、系统集成、试点上线和运营复盘连成闭环。"
+            eyebrow="八维方法"
+            title="八维方法：每一维都有输入、动作、产出与验收"
+            desc="Landscape、Logic、Lab、Link、Launchpad、Learn、Live、Loop，把产品矩阵转成可执行的企业 AI 落地路径。"
           />
-          <div className="mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-            {methodSteps.map((step, i) => (
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {methodDimensions.map((step, i) => (
               <div
                 key={step.id}
                 className="relative flex flex-col rounded-xl border border-border bg-card p-5"
@@ -71,12 +71,7 @@ export default function HomePage() {
                 <p className="mt-1 font-mono text-[11px] font-semibold tracking-wide text-primary/70">
                   {step.code}
                 </p>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{step.desc}</p>
-                {i < methodSteps.length - 1 && (
-                  <span className="absolute -right-2 top-8 hidden text-border lg:block" aria-hidden="true">
-                    <Icon name="arrow" size={16} />
-                  </span>
-                )}
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{step.question}</p>
               </div>
             ))}
           </div>
@@ -85,16 +80,16 @@ export default function HomePage() {
               href="/method"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
             >
-              查看 xL 交付路径 <Icon name="arrow" size={16} />
+              查看八维方法 <Icon name="arrow" size={16} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* xDo 工具 */}
+      {/* Do 引擎 */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <SectionTitle
-          eyebrow="xDo 工程引擎"
+          eyebrow="工程引擎"
           title="Do 系列工程引擎支撑真实交付"
           desc="Doops、DoAgent、DoDNS 组成远程运维、Agent 执行、入口治理和运行诊断的工程底座。"
         />

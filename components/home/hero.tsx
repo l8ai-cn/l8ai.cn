@@ -63,7 +63,7 @@ export function Hero() {
               把企业 AI 从 Demo 推进到可运营的生产系统
             </h1>
             <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              L8AI（杭州来八数智有限公司）以 FDE 现场工程、8L 产品分层、xL 交付路径和 xDo 工具链，帮助企业识别高价值场景，打通数据、权限、系统集成、评测、部署和运营闭环。
+              L8AI（杭州来八数智有限公司）以 FDE 现场工程、产品矩阵、八维方法、课程体系和 Do 引擎，帮助企业识别高价值场景，打通数据、权限、系统集成、评测、部署和运营闭环。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -76,7 +76,7 @@ export function Hero() {
                 href="/method"
                 className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
               >
-                查看 xL 方法论
+                查看八维方法
                 <Icon name="arrow" size={16} />
               </Link>
             </div>
