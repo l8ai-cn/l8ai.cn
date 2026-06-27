@@ -28,7 +28,7 @@ export function SiteFooter() {
           ))}
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
-          <span>© 2026 {company.legalNameEn}. All rights reserved.</span>
+          <span>© 2026 {company.brand}. All rights reserved.</span>
           <span>{company.email}</span>
         </div>
       </div>

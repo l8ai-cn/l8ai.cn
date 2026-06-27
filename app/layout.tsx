@@ -1,21 +1,8 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, JetBrains_Mono } from "next/font/google"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { AiAssistant } from "@/components/ai-assistant"
 import "./globals.css"
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  display: "swap",
-})
 
 export const metadata: Metadata = {
   title: {
@@ -42,7 +29,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN" className={`bg-background ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="zh-CN" className="bg-background">
       <body className="font-sans antialiased">
         <SiteHeader />
         {children}
