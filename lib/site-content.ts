@@ -52,6 +52,10 @@ export const navItems: NavItem[] = [
     href: "/courses",
   },
   {
+    label: "白皮书",
+    href: "/whitepapers",
+  },
+  {
     label: "博客",
     href: "/blog",
   },
@@ -249,7 +253,7 @@ export const doTools: DoTool[] = [
     desc: "面向部署、运维、远程执行和 Kubernetes 操作的工程入口，把 AI 应用从本地推向生产环境。",
     bullets: ["远程运维入口", "集群发布", "运行态诊断"],
     features: [
-      { title: "一键发布", desc: "标准化发布流水线，从代码到集群一步到位。" },
+      { title: "一键发布", desc: "标���化发布流水线，从代码到集群一步到位。" },
       { title: "远程执行", desc: "安全的远程命令执行与批量运维操作。" },
       { title: "运行诊断", desc: "实时观测运行态指标，快速定位问题。" },
     ],
@@ -370,6 +374,7 @@ export const footerColumns: { title: string; links: { label: string; href: strin
     links: [
       { label: "实践案例", href: "/cases" },
       { label: "课程", href: "/courses" },
+      { label: "白皮书", href: "/whitepapers" },
       { label: "博客", href: "/blog" },
     ],
   },
