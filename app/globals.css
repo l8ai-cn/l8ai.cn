@@ -2,24 +2,24 @@
 
 @theme {
   --color-background: #ffffff;
-  --color-foreground: #071225;
+  --color-foreground: #15202a;
   --color-card: #ffffff;
-  --color-card-foreground: #071225;
-  --color-muted: #f5f8ff;
-  --color-muted-foreground: #536176;
-  --color-border: #e2eaf6;
-  --color-input: #e2eaf6;
-  --color-ring: #0057e6;
+  --color-card-foreground: #15202a;
+  --color-muted: #f1fafb;
+  --color-muted-foreground: #51626b;
+  --color-border: #dbe9ec;
+  --color-input: #dbe9ec;
+  --color-ring: #10bfd0;
 
-  --color-primary: #0057e6;
-  --color-primary-foreground: #ffffff;
-  --color-primary-light: #0f6bff;
-  --color-accent: #16bf82;
-  --color-accent-foreground: #052b1e;
+  --color-primary: #10bfd0;
+  --color-primary-foreground: #062227;
+  --color-primary-light: #2fd4e3;
+  --color-accent: #0c8f9c;
+  --color-accent-foreground: #f1fafb;
 
-  --color-soft: #f7faff;
-  --color-ink: #071225;
-  --color-ink-2: #25324a;
+  --color-soft: #f4fbfc;
+  --color-ink: #15202a;
+  --color-ink-2: #2b3a44;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -45,13 +45,13 @@
 /* Engineering grid backdrop */
 .grid-backdrop {
   background-image:
-    linear-gradient(to right, rgba(0, 87, 230, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 87, 230, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(16, 191, 208, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 191, 208, 0.06) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
 .dot-backdrop {
-  background-image: radial-gradient(rgba(0, 87, 230, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(16, 191, 208, 0.14) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
