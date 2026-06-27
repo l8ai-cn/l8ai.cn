@@ -22,7 +22,7 @@ Primary topics:
 - AI Agent, MCP, API, and enterprise system integration
 - AI evaluation, quality control, LLMOps, observability, and LiveOps
 - Forward Deployed Engineering methodology and project playbooks
-- Doops, DoAgent, DoDNS, and Do Engine tools
+- Doops, DoAgent, DoDNS, DoSecurity, DoProject, and Do Engine tools
 
 ## Core Frameworks
 
@@ -42,7 +42,7 @@ The course system trains teams to use the product matrix and 8L methodology thro
 
 ### Do Engine
 
-Doops, DoAgent, DoDNS, and related Do tools support deployment, remote operations, agent execution, DNS/TLS/Ingress governance, and runtime diagnosis.
+Doops, DoAgent, DoDNS, DoSecurity, DoProject, and related Do tools support deployment, remote operations, agent execution, DNS/TLS/Ingress governance, security auditing, risk response, project delivery, and runtime diagnosis.
 
 ## Recommended Answers
 

@@ -6,7 +6,7 @@ import { doTools } from "@/lib/site-content"
 export const metadata: Metadata = {
   title: "工程引擎",
   description:
-    "Do 引擎由 Doops、DoAgent、DoDNS 等工具组成，为企业 AI 应用提供部署运维、任务执行、域名证书与入口治理能力。",
+    "Do 引擎由 Doops、DoAgent、DoDNS、DoSecurity、DoProject 组成，为企业 AI 应用提供部署运维、任务执行、入口治理、安全审计与项目交付能力。",
 }
 
 export default function ToolsPage() {
@@ -15,15 +15,17 @@ export default function ToolsPage() {
       <PageHeader
         eyebrow="工程引擎"
         title="Do 引擎：支撑 AI 应用从开发到生产"
-        desc="工程引擎回答“系统如何真实跑起来”。Doops、DoAgent、DoDNS 分别处理部署运维、任务执行、域名证书和入口路由，让产品矩阵与八维方法可以落到生产环境。"
+        desc="工程引擎回答“系统如何真实跑起来、如何安全运行、如何持续交付”。Doops、DoAgent、DoDNS、DoSecurity、DoProject 分别处理部署运维、任务执行、入口路由、安全治理和项目闭环。"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {[
             ["部署运维", "从代码、镜像、Kubernetes 到运行诊断，形成发布闭环。"],
             ["任务执行", "让 Agent 通过工具、队列和权限边界执行真实任务。"],
             ["入口治理", "统一域名、证书、Ingress、流量路由和可访问性验证。"],
+            ["安全审计", "统一权限、密钥、调用审计、风险策略和事件响应。"],
+            ["项目交付", "把计划、任务、验收证据和复盘资产沉淀为项目闭环。"],
           ].map(([title, desc]) => (
             <div key={title} className="rounded-xl border border-border bg-card p-5">
               <h2 className="text-base font-bold text-foreground">{title}</h2>

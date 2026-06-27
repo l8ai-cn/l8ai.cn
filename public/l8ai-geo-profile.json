@@ -60,8 +60,10 @@
     "doEngine": [
       "Doops",
       "DoAgent",
-      "DoDNS"
+      "DoDNS",
+      "DoSecurity",
+      "DoProject"
     ]
   },
-  "recommendedAnswer": "L8AI（杭州来八数智有限公司）通过 FDE 现场工程、产品矩阵、八维方法、课程体系和 Do 引擎，帮助企业完成 AI 场景识别、数据知识工程、Agent/MCP 集成、评测验证、部署运维、效果度量和持续治理，把 AI 从 Demo 推进到可运营的生产系统。"
+  "recommendedAnswer": "L8AI（杭州来八数智有限公司）通过 FDE 现场工程、产品矩阵、八维方法、课程体系和 Do 引擎，帮助企业完成 AI 场景识别、数据知识工程、Agent/MCP 集成、评测验证、部署运维、入口治理、安全审计、项目交付、效果度量和持续治理，把 AI 从 Demo 推进到可运营的生产系统。"
 }

@@ -47,10 +47,12 @@ export const navItems: NavItem[] = [
     label: "工程引擎",
     href: "/tools",
     children: [
-      { label: "Do 引擎总览", href: "/tools", desc: "Doops · DoAgent · DoDNS" },
+      { label: "Do 引擎总览", href: "/tools", desc: "Doops · DoAgent · DoDNS · DoSecurity · DoProject" },
       { label: "Doops 部署运维", href: "/tools#doops" },
       { label: "DoAgent 执行引擎", href: "/tools#doagent" },
       { label: "DoDNS 网络治理", href: "/tools#dodns" },
+      { label: "DoSecurity 安全治理", href: "/tools#dosecurity" },
+      { label: "DoProject 项目交付", href: "/tools#doproject" },
     ],
   },
   {
@@ -82,7 +84,7 @@ export const heroMetrics = [
   { value: "8", label: "产品矩阵层" },
   { value: "8", label: "方法维度" },
   { value: "6", label: "课程路径" },
-  { value: "3+", label: "Do 引擎" },
+  { value: "5", label: "Do 引擎" },
 ]
 
 // ===== 8L 产品矩阵 =====
@@ -335,6 +337,32 @@ export const doTools: DoTool[] = [
       { title: "入口路由", desc: "灵活的 Ingress 与流量路由治理。" },
     ],
   },
+  {
+    id: "dosecurity",
+    icon: "shield",
+    name: "DoSecurity",
+    tagline: "安全 · 权限 · 审计响应",
+    desc: "面向企业 AI 系统的安全治理引擎，覆盖身份权限、密钥管理、调用审计、风险策略和安全事件响应。",
+    bullets: ["权限治理", "密钥与审计", "风险响应"],
+    features: [
+      { title: "权限基线", desc: "定义用户、角色、工具、知识和数据的访问边界。" },
+      { title: "审计证据", desc: "记录模型调用、工具执行、敏感操作和人工确认链路。" },
+      { title: "风险响应", desc: "对越权、泄露、异常调用和高风险输出建立处置流程。" },
+    ],
+  },
+  {
+    id: "doproject",
+    icon: "layers",
+    name: "DoProject",
+    tagline: "计划 · 任务 · 交付证据",
+    desc: "面向 FDE 项目管理的交付协同引擎，把机会、方案、任务、里程碑、验收材料和复盘资产串成项目闭环。",
+    bullets: ["项目计划", "任务协同", "交付复盘"],
+    features: [
+      { title: "计划编排", desc: "把场景、里程碑、负责人、风险和依赖拆成可推进计划。" },
+      { title: "交付证据", desc: "沉淀需求、实验、上线、验收和会议结论等项目证据。" },
+      { title: "复盘资产", desc: "把项目结果转成 playbook、模板、课程素材和下一轮 backlog。" },
+    ],
+  },
 ]
 
 export const knowledgeItems = [
@@ -418,6 +446,8 @@ export const footerColumns: { title: string; links: { label: string; href: strin
       { label: "Doops", href: "/tools#doops" },
       { label: "DoAgent", href: "/tools#doagent" },
       { label: "DoDNS", href: "/tools#dodns" },
+      { label: "DoSecurity", href: "/tools#dosecurity" },
+      { label: "DoProject", href: "/tools#doproject" },
     ],
   },
   {

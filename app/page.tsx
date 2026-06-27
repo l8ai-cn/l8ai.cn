@@ -91,9 +91,9 @@ export default function HomePage() {
         <SectionTitle
           eyebrow="工程引擎"
           title="Do 系列工程引擎支撑真实交付"
-          desc="Doops、DoAgent、DoDNS 组成远程运维、Agent 执行、入口治理和运行诊断的工程底座。"
+          desc="Doops、DoAgent、DoDNS、DoSecurity、DoProject 组成部署运维、任务执行、入口治理、安全审计和项目交付的工程底座。"
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {doTools.map((tool) => (
             <Link
               key={tool.id}
