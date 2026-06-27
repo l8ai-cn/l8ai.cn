@@ -11,7 +11,6 @@ export function SiteFooter() {
             <Image src="/l8ai-logo.svg" alt="L8AI" width={92} height={30} />
             <p className="mt-4 text-sm font-semibold text-foreground">{company.legalNameCn}</p>
             <p className="mt-1 text-xs text-muted-foreground">{company.legalNameEn}</p>
-            <p className="mt-3 text-xs text-muted-foreground">{company.slogan}</p>
           </div>
           {footerColumns.map((col) => (
             <div key={col.title}>

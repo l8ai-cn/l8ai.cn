@@ -36,7 +36,10 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
         <Link href="/" className="flex items-center gap-2" onClick={close} aria-label="L8AI 首页">
-          <Image src="/l8ai-logo.svg" alt="L8AI" width={52} height={52} priority sizes="52px" />
+          <Image src="/l8ai-logo.svg" alt="L8AI" width={34} height={34} priority sizes="34px" />
+          <span className="whitespace-nowrap text-sm font-bold tracking-wide text-foreground">
+            L8AI 企业 AI 实战
+          </span>
         </Link>
 
         <nav ref={navRef} className="hidden items-center gap-1 lg:flex" aria-label="主导航">
@@ -70,9 +73,6 @@ export function SiteHeader() {
                   }`}
                 >
                   {item.label}
-                  <span className={`text-[10px] opacity-60 transition-transform ${menuOpen ? "rotate-180" : ""}`}>
-                    ▾
-                  </span>
                 </button>
                 {menuOpen && (
                   <div className="absolute left-0 top-full w-64 rounded-xl border border-border bg-card p-2 shadow-[0_18px_45px_rgba(12,41,92,0.12)]">
