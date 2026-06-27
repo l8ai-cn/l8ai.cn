@@ -86,7 +86,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Do 引擎 */}
+      {/* 工程引擎 */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <SectionTitle
           eyebrow="工程引擎"
@@ -123,7 +123,7 @@ export default function HomePage() {
       <section className="border-y border-border bg-soft">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <SectionTitle
-            eyebrow="场景样板"
+            eyebrow="实践案例"
             title="把方法落到可交付业务系统"
             desc="用 FDE 方式拆解典型企业 AI 场景，明确数据、权限、集成、评测和运营边界。"
           />
@@ -151,7 +151,7 @@ export default function HomePage() {
               href="/cases"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
             >
-              预约场景诊断 <Icon name="arrow" size={16} />
+              查看实践案例 <Icon name="arrow" size={16} />
             </Link>
           </div>
         </div>

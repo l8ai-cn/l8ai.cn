@@ -4,7 +4,7 @@ import { PageHeader, CTA } from "@/components/ui-bits"
 import { caseCards } from "@/lib/site-content"
 
 export const metadata: Metadata = {
-  title: "场景样板",
+  title: "实践案例",
   description: "L8AI 用 FDE 方式拆解服务知识、运维流程、内容合规和知识管理等典型企业 AI 场景，明确数据、权限、集成、评测和运营边界。",
 }
 
@@ -12,9 +12,9 @@ export default function CasesPage() {
   return (
     <main>
       <PageHeader
-        eyebrow="场景样板"
+        eyebrow="实践案例"
         title="把方法落到可交付业务系统"
-        desc="覆盖服务知识、运维流程、内容合规与知识管理等场景，每个样板都沿 xL 路径拆清数据、权限、集成、评测和运营边界。"
+        desc="覆盖服务知识、运维流程、内容合规与知识管理等场景，每个案例都沿八维方法拆清数据、权限、集成、评测和运营边界。"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">

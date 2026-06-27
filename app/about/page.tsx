@@ -5,7 +5,7 @@ import { company, heroProof } from "@/lib/site-content"
 
 export const metadata: Metadata = {
   title: "关于我们",
-  description: `${company.legalNameCn}（${company.brand}）专注企业 AI 生产化，以 FDE 现场工程、产品矩阵、八维方法、课程体系与 Do 引擎，帮助企业构建可持续的 AI 能力。`,
+  description: `${company.legalNameCn}（${company.brand}）专注企业 AI 生产化，以 FDE 现场工程、产品矩阵、八维方法、课程体系与工程引擎，帮助企业构建可持续的 AI 能力。`,
 }
 
 const values = [
@@ -21,7 +21,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="关于我们"
         title="让企业 AI 生产化变得可规划、可交付、可持续"
-        desc={`${company.legalNameCn}（${company.brand}）是一家专注企业 AI 生产化的工程化服务公司，以 FDE 现场工程、产品矩阵、八维方法、课程体系与 Do 引擎，陪伴企业走完 AI 从探索到规模化的全过程。`}
+        desc={`${company.legalNameCn}（${company.brand}）是一家专注企业 AI 生产化的工程化服务公司，以 FDE 现场工程、产品矩阵、八维方法、课程体系与工程引擎，陪伴企业走完 AI 从探索到规模化的全过程。`}
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">

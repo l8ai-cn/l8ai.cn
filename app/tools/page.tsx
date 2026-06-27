@@ -6,7 +6,7 @@ import { doTools } from "@/lib/site-content"
 export const metadata: Metadata = {
   title: "工程引擎",
   description:
-    "Do 引擎由 Doops、DoAgent、DoDNS、DoSecurity、DoProject 组成，为企业 AI 应用提供部署运维、任务执行、入口治理、安全审计与项目交付能力。",
+    "工程引擎由 Doops、DoAgent、DoDNS、DoSecurity、DoProject 组成，为企业 AI 应用提供部署运维、任务执行、入口治理、安全审计与项目交付能力。",
 }
 
 export default function ToolsPage() {
@@ -14,8 +14,8 @@ export default function ToolsPage() {
     <main>
       <PageHeader
         eyebrow="工程引擎"
-        title="Do 引擎：支撑 AI 应用从开发到生产"
-        desc="工程引擎回答“系统如何真实跑起来、如何安全运行、如何持续交付”。Doops、DoAgent、DoDNS、DoSecurity、DoProject 分别处理部署运维、任务执行、入口路由、安全治理和项目闭环。"
+        title="工程引擎：支撑 AI 应用从开发到生产"
+        desc="工程引擎也称 Do 引擎，回答“系统如何真实跑起来、如何安全运行、如何持续交付”。Doops、DoAgent、DoDNS、DoSecurity、DoProject 分别处理部署运维、任务执行、入口路由、安全治理和项目闭环。"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-14 lg:px-8">

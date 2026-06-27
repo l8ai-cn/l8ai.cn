@@ -2,58 +2,31 @@ export const company = {
   brand: "L8AI",
   legalNameCn: "杭州来八数智有限公司",
   legalNameEn: "Hangzhou Laiba Digital Intelligence Co., Ltd.",
-  slogan: "产品矩阵 · 八维方法 · 课程体系 · Do 引擎",
+  slogan: "产品矩阵 · 八维方法 · 课程体系 · 工程引擎",
   email: "contact@l8ai.cn",
 }
 
 export type NavItem = {
   label: string
   href: string
-  children?: { label: string; href: string; desc?: string }[]
 }
 
 export const navItems: NavItem[] = [
   {
     label: "产品矩阵",
     href: "/products",
-    children: [
-      { label: "8L 产品矩阵总览", href: "/products", desc: "构建企业 AI 生产化操作系统" },
-      { label: "Landscape 场景雷达", href: "/products#layer-01" },
-      { label: "Lab 知识实验", href: "/products#layer-03" },
-      { label: "Live 生产治理", href: "/products#layer-07" },
-    ],
   },
   {
     label: "八维方法",
     href: "/method",
-    children: [
-      { label: "8L 方法论总览", href: "/method", desc: "每一维都有输入、动作、产出与验收" },
-      { label: "机会到方案", href: "/method#method-landscape" },
-      { label: "知识到集成", href: "/method#method-lab" },
-      { label: "上线到复盘", href: "/method#method-launchpad" },
-    ],
   },
   {
     label: "课程体系",
     href: "/courses",
-    children: [
-      { label: "8L 课程设计总览", href: "/courses", desc: "从认知、实战到组织能力建设" },
-      { label: "产品系统工作坊", href: "/courses/8l-product-system" },
-      { label: "交付路径实训", href: "/courses/xl-delivery-method" },
-      { label: "工程工具实验课", href: "/courses/xdo-engineering-tools" },
-    ],
   },
   {
     label: "工程引擎",
     href: "/tools",
-    children: [
-      { label: "Do 引擎总览", href: "/tools", desc: "Doops · DoAgent · DoDNS · DoSecurity · DoProject" },
-      { label: "Doops 部署运维", href: "/tools#doops" },
-      { label: "DoAgent 执行引擎", href: "/tools#doagent" },
-      { label: "DoDNS 网络治理", href: "/tools#dodns" },
-      { label: "DoSecurity 安全治理", href: "/tools#dosecurity" },
-      { label: "DoProject 项目交付", href: "/tools#doproject" },
-    ],
   },
   {
     label: "实践案例",
@@ -62,10 +35,6 @@ export const navItems: NavItem[] = [
   {
     label: "资源洞察",
     href: "/whitepapers",
-    children: [
-      { label: "白皮书", href: "/whitepapers", desc: "体系化资料与深度文档" },
-      { label: "博客", href: "/blog", desc: "方法、工程与行业观察" },
-    ],
   },
   {
     label: "关于我们",
@@ -84,7 +53,7 @@ export const heroMetrics = [
   { value: "8", label: "产品矩阵层" },
   { value: "8", label: "方法维度" },
   { value: "6", label: "课程路径" },
-  { value: "5", label: "Do 引擎" },
+  { value: "5", label: "工程引擎" },
 ]
 
 // ===== 8L 产品矩阵 =====
@@ -286,7 +255,7 @@ export const methodDimensions: MethodDimension[] = [
   },
 ]
 
-// ===== Do 引擎 =====
+// ===== 工程引擎 =====
 export type DoTool = {
   id: string
   icon: string
@@ -366,7 +335,7 @@ export const doTools: DoTool[] = [
 ]
 
 export const knowledgeItems = [
-  { id: "knowledge-methods", icon: "compass", title: "方法论与指南", desc: "FDE、产品矩阵、八维方法、Do 引擎的流程指引、决策框架与交付标准。" },
+  { id: "knowledge-methods", icon: "compass", title: "方法论与指南", desc: "FDE、产品矩阵、八维方法、工程引擎的流程指引、决策框架与交付标准。" },
   { id: "knowledge-scenarios", icon: "workflow", title: "行业与场景库", desc: "沉淀制造、教育、零售、金融、政企等场景的 AI 机会地图和方案参考。" },
   { id: "knowledge-tools", icon: "book", title: "模板与工具", desc: "访谈脚本、PRD 模板、Eval 数据集、上线清单和 Do 系列自动化脚本。" },
   { id: "knowledge-cases", icon: "chat", title: "案例与复盘", desc: "把项目问题、技术路径、上线闸口和复盘结论转成可复用 playbook。" },

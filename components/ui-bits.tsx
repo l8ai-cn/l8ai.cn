@@ -70,7 +70,7 @@ export function CTA() {
             href="/cases"
             className="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-white/10"
           >
-            查看场景样板
+            查看实践案例
           </Link>
         </div>
       </div>

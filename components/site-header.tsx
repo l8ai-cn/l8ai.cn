@@ -46,7 +46,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link href="/whitepapers" className="text-sm font-semibold text-ink-2 hover:text-primary">
-            资料库
+            白皮书
           </Link>
           <Link
             href="/about#contact"

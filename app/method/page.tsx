@@ -38,7 +38,7 @@ export default function MethodPage() {
     <main>
       <PageHeader
         eyebrow="八维方法"
-        title="8L 方法论：把产品矩阵变成落地路径"
+        title="八维方法：把产品矩阵变成落地路径"
         desc="八维方法回答“企业 AI 应该怎么落地”。它不是另起一套概念，而是把 8L 产品矩阵转成可执行的工程方法：每一维都有问题、输入、动作、产出和验收标准。"
       />
 
@@ -113,7 +113,7 @@ export default function MethodPage() {
             <span className="font-mono text-xs font-semibold tracking-widest text-primary">从方法到页面</span>
             <h2 className="mt-3 text-2xl font-bold text-foreground">八维方法和产品矩阵一一对应</h2>
             <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
-              产品矩阵定义“建设哪些能力”，八维方法定义“如何把能力落到项目”。课程体系会把这套方法拆成可训练任务，Do 引擎负责支撑真实环境中的发布、执行和入口治理。
+              产品矩阵定义“建设哪些能力”，八维方法定义“如何把能力落到项目”。课程体系会把这套方法拆成可训练任务，工程引擎负责支撑真实环境中的发布、执行和入口治理。
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 lg:justify-end">
