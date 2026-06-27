@@ -7,12 +7,31 @@ import { Icon } from "@/components/icon"
 
 const SUGGESTIONS = ["8L 核心产品是什么？", "6L 方法论怎么落地？", "3Do 工具有哪些？", "如何预约咨询？"]
 
+function renderRich(text: string) {
+  // 轻量渲染 **粗体**，其余按纯文本处理
+  return text.split(/(\*\*[^*]+\*\*)/g).map((seg, i) => {
+    if (seg.startsWith("**") && seg.endsWith("**")) {
+      return (
+        <strong key={i} className="font-semibold">
+          {seg.slice(2, -2)}
+        </strong>
+      )
+    }
+    return <span key={i}>{seg}</span>
+  })
+}
+
 function messageText(parts: { type: string; text?: string }[] | undefined) {
   if (!parts) return ""
-  return parts
+  const raw = parts
     .filter((p) => p.type === "text")
     .map((p) => p.text ?? "")
     .join("")
+  // 去除 MiniMax 推理模型输出的 <think>…</think> 思考块（含未闭合的流式片段）
+  return raw
+    .replace(/<think>[\s\S]*?<\/think>/g, "")
+    .replace(/<think>[\s\S]*$/g, "")
+    .trim()
 }
 
 export function AiAssistant() {
@@ -94,7 +113,13 @@ export function AiAssistant() {
                         : "rounded-tl-sm bg-muted text-foreground"
                     }`}
                   >
-                    {messageText(m.parts) || (busy ? "…" : "")}
+                    {isUser
+                      ? messageText(m.parts)
+                      : messageText(m.parts)
+                        ? renderRich(messageText(m.parts))
+                        : busy
+                          ? "正在思考…"
+                          : ""}
                   </div>
                 </div>
               )
