@@ -7,6 +7,7 @@ type IconProps = {
 const paths: Record<string, string[]> = {
   activity: ["M4 12h4l2-7 4 14 2-7h4"],
   arrow: ["M5 12h14", "M13 6l6 6-6 6"],
+  arrowRight: ["M5 12h14", "M13 6l6 6-6 6"],
   arrowUpRight: ["M7 17L17 7", "M8 7h9v9"],
   blocks: ["M4 4h7v7H4z", "M13 4h7v7h-7z", "M4 13h7v7H4z", "M13 13h7v7h-7z"],
   book: ["M5 5c2-1 4-1 7 1v14c-3-2-5-2-7-1z", "M12 6c3-2 5-2 7-1v14c-2-1-4-1-7 1z"],
