@@ -7,8 +7,8 @@ import { courses, courseTracks, type Course } from "@/lib/courses"
 
 const trackLabel: Record<Course["track"], string> = {
   "8L": "8L 产品课",
-  "6L": "6L 方法课",
-  "3Do": "3Do 工具课",
+  xL: "xL 方法课",
+  xDo: "xDo 工具课",
   Operations: "运营治理课",
 }
 

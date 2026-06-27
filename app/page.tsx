@@ -9,12 +9,12 @@ export default function HomePage() {
     <main>
       <Hero />
 
-      {/* 8L 核心产品 */}
+      {/* 8L 产品分层 */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <SectionTitle
-          eyebrow="8L 核心产品"
-          title="八层结构，构建企业 AI 落地操作系统"
-          desc="从机会识别到持续运营，覆盖 AI 落地的全生命周期。"
+          eyebrow="8L 产品分层"
+          title="8L 产品分层：构建企业 AI 生产化操作系统"
+          desc="从机会识别、知识实验、系统连接到上线治理，覆盖企业 AI 的全生命周期。"
         />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {productLayers.map((layer) => (
@@ -31,7 +31,7 @@ export default function HomePage() {
               </div>
               <h3 className="mt-4 text-base font-bold text-foreground">{layer.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{layer.desc}</p>
-              <span className="mt-3 font-mono text-[11px] font-semibold uppercase tracking-wide text-primary/70">
+              <span className="mt-3 font-mono text-[11px] font-semibold tracking-wide text-primary/70">
                 {layer.code}
               </span>
             </Link>
@@ -47,13 +47,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6L 方法论 */}
+      {/* xL 方法论 */}
       <section className="border-y border-border bg-soft">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <SectionTitle
-            eyebrow="6L 方法论"
-            title="从问题到价值的工程化路径"
-            desc="Locate、Learn、Layer、Link、Launch、Loop，让 AI 真正产生业务价值。"
+            eyebrow="xL 方法论"
+            title="xL 方法论：从真问题到可复用价值"
+            desc="Locate、Learn、Layer、Link、Launch、Leverage、Loop，把业务语境、系统集成、试点上线和运营复盘连成闭环。"
           />
           <div className="mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-6">
             {methodSteps.map((step, i) => (
@@ -68,7 +68,7 @@ export default function HomePage() {
                   <Icon name={step.icon} size={18} className="text-primary" />
                 </div>
                 <h3 className="mt-3 text-sm font-bold text-foreground">{step.title}</h3>
-                <p className="mt-1 font-mono text-[11px] font-semibold uppercase tracking-wide text-primary/70">
+                <p className="mt-1 font-mono text-[11px] font-semibold tracking-wide text-primary/70">
                   {step.code}
                 </p>
                 <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{step.desc}</p>
@@ -85,18 +85,18 @@ export default function HomePage() {
               href="/method"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
             >
-              了解 6L 方法论 <Icon name="arrow" size={16} />
+              查看 xL 交付路径 <Icon name="arrow" size={16} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 3Do 工具 */}
+      {/* xDo 工具 */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <SectionTitle
-          eyebrow="3Do 工具"
+          eyebrow="xDo 工程引擎"
           title="Do 系列工程引擎支撑真实交付"
-          desc="Doops、DoAgent、DoDNS 组成部署、执行、网络与治理的工程底座。"
+          desc="Doops、DoAgent、DoDNS 组成远程运维、Agent 执行、入口治理和运行诊断的工程底座。"
         />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {doTools.map((tool) => (
@@ -128,9 +128,9 @@ export default function HomePage() {
       <section className="border-y border-border bg-soft">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <SectionTitle
-            eyebrow="实践案例"
-            title="与领先企业共创真实价值"
-            desc="深入业务一线，交付可衡量的结果。"
+            eyebrow="场景样板"
+            title="把方法落到可交付业务系统"
+            desc="用 FDE 方式拆解典型企业 AI 场景，明确数据、权限、集成、评测和运营边界。"
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {caseCards.map((card) => (
@@ -156,7 +156,7 @@ export default function HomePage() {
               href="/cases"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
             >
-              查看更多案例 <Icon name="arrow" size={16} />
+              预约场景诊断 <Icon name="arrow" size={16} />
             </Link>
           </div>
         </div>

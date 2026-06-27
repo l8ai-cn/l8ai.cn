@@ -36,7 +36,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
         <Link href="/" className="flex items-center gap-2" onClick={close} aria-label="L8AI 首页">
-          <Image src="/l8ai-logo.svg" alt="L8AI" width={84} height={28} priority />
+          <Image src="/l8ai-logo.svg" alt="L8AI" width={52} height={52} priority sizes="52px" />
         </Link>
 
         <nav ref={navRef} className="hidden items-center gap-1 lg:flex" aria-label="主导航">
@@ -102,8 +102,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <Link href="/about#contact" className="text-sm font-semibold text-ink-2 hover:text-primary">
-            登录
+          <Link href="/whitepapers" className="text-sm font-semibold text-ink-2 hover:text-primary">
+            资料库
           </Link>
           <Link
             href="/about#contact"

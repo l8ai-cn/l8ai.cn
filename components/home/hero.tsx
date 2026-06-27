@@ -6,7 +6,7 @@ function Workbench() {
   return (
     <div className="rounded-2xl border border-border bg-card p-5 shadow-[0_24px_60px_rgba(12,41,92,0.12)]">
       <div className="flex items-center justify-between border-b border-border pb-3">
-        <span className="font-mono text-xs font-semibold text-ink-2">L8AI 企业 AI 落地工作台</span>
+        <span className="font-mono text-xs font-semibold text-ink-2">L8AI 企业 AI 生产化工作台</span>
         <div className="flex gap-1.5" aria-hidden="true">
           <span className="h-2.5 w-2.5 rounded-full bg-border" />
           <span className="h-2.5 w-2.5 rounded-full bg-border" />
@@ -31,8 +31,8 @@ function Workbench() {
           ))}
         </div>
         <div className="rounded-xl border border-border bg-soft p-3 sm:col-span-2">
-          <span className="font-mono text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-            业务价值看板
+          <span className="font-mono text-[10px] font-semibold tracking-wide text-muted-foreground">
+            生产化体系看板
           </span>
           <div className="mt-3 grid grid-cols-2 gap-3">
             {heroMetrics.map((m) => (
@@ -57,26 +57,26 @@ export function Hero() {
           <div className="animate-fade-up">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 font-mono text-xs font-semibold text-primary">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              8L · 6L · 3Do 企业 AI 落地体系
+              Enterprise AI Productionization · FDE
             </span>
             <h1 className="mt-5 text-balance text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl">
-              把 AI 从 Demo 推进到真实业务系统
+              把企业 AI 从 Demo 推进到可运营的生产系统
             </h1>
             <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              L8AI 以工程化方法与业务闭环，帮助企业快速落地可运营、可度量、可持续进化的 AI 解决方案。
+              L8AI（杭州来八数智有限公司）以 FDE 现场工程、8L 产品分层、xL 交付路径和 xDo 工具链，帮助企业识别高价值场景，打通数据、权限、系统集成、评测、部署和运营闭环。
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/about#contact"
                 className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-light"
               >
-                预约咨询
+                预约落地诊断
               </Link>
               <Link
                 href="/method"
                 className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
               >
-                了解 6L 方法论
+                查看 xL 方法论
                 <Icon name="arrow" size={16} />
               </Link>
             </div>

@@ -2,7 +2,7 @@ export const company = {
   brand: "L8AI",
   legalNameCn: "杭州来八数智有限公司",
   legalNameEn: "Hangzhou Laiba Digital Intelligence Co., Ltd.",
-  slogan: "8L 核心产品 · 6L 方法论 · 3Do 工具",
+  slogan: "8L · xL · xDo 企业 AI 生产化体系",
   email: "contact@l8ai.cn",
 }
 
@@ -14,30 +14,30 @@ export type NavItem = {
 
 export const navItems: NavItem[] = [
   {
-    label: "核心产品",
+    label: "8L 产品分层",
     href: "/products",
     children: [
-      { label: "8L 产品体系总览", href: "/products", desc: "八层结构构建企业 AI 落地操作系统" },
-      { label: "机会洞察 / 知识工程", href: "/products#layer-01" },
-      { label: "模型编排 / 应用集成", href: "/products#layer-03" },
-      { label: "运营治理 / 效果度量", href: "/products#layer-07" },
+      { label: "8L 产品分层总览", href: "/products", desc: "构建企业 AI 生产化操作系统" },
+      { label: "Landscape 场景雷达", href: "/products#layer-01" },
+      { label: "Link 集成平台", href: "/products#layer-04" },
+      { label: "Loop 资产闭环", href: "/products#layer-08" },
     ],
   },
   {
-    label: "方法论",
+    label: "xL 方法论",
     href: "/method",
     children: [
-      { label: "6L 方法论总览", href: "/method", desc: "从定位到闭环的工程化交付路径" },
+      { label: "xL 交付路径总览", href: "/method", desc: "从真问题到可复用价值的工程化路径" },
       { label: "Locate / Learn", href: "/method#step-1" },
       { label: "Layer / Link", href: "/method#step-3" },
-      { label: "Launch / Loop", href: "/method#step-5" },
+      { label: "Launch / Leverage / Loop", href: "/method#step-5" },
     ],
   },
   {
-    label: "3Do 工具",
+    label: "xDo 引擎",
     href: "/tools",
     children: [
-      { label: "3Do 工程引擎总览", href: "/tools", desc: "Doops · DoAgent · DoDNS" },
+      { label: "xDo 工程工具链总览", href: "/tools", desc: "Doops · DoAgent · DoDNS" },
       { label: "Doops 部署运维", href: "/tools#doops" },
       { label: "DoAgent 执行引擎", href: "/tools#doagent" },
       { label: "DoDNS 网络治理", href: "/tools#dodns" },
@@ -66,20 +66,20 @@ export const navItems: NavItem[] = [
 ]
 
 export const heroProof = [
-  { icon: "shield", label: "业务导向的工程落地" },
-  { icon: "activity", label: "可度量的业务价值" },
-  { icon: "lock", label: "安全合规与可控" },
-  { icon: "workflow", label: "长期陪伴的团队" },
+  { icon: "workflow", label: "从业务问题出发" },
+  { icon: "activity", label: "用评测定义质量" },
+  { icon: "shield", label: "打通权限与治理" },
+  { icon: "rocket", label: "上线后持续运营" },
 ]
 
 export const heroMetrics = [
-  { value: "23", label: "上线应用数" },
-  { value: "128 万", label: "月度调用量" },
-  { value: "68%", label: "业务覆盖率" },
-  { value: "4.7 / 5", label: "综合满意度" },
+  { value: "8L", label: "产品能力层" },
+  { value: "7", label: "xL 交付步骤" },
+  { value: "3+", label: "xDo 工具入口" },
+  { value: "4类", label: "交付资产" },
 ]
 
-// ===== 8L 核心产品 =====
+// ===== 8L 产品分层 =====
 export type ProductLayer = {
   no: string
   id: string
@@ -94,78 +94,78 @@ export const productLayers: ProductLayer[] = [
   {
     no: "01",
     id: "layer-01",
-    code: "Lead",
+    code: "Landscape",
     icon: "radar",
-    title: "机会与问题洞察",
-    desc: "识别高价值业务场景与痛点，量化机会空间与优先级。",
-    bullets: ["业务流程分析", "价值评估模型", "机会池管理"],
+    title: "AI 场景雷达",
+    desc: "识别、收集、评分和排序企业 AI 机会，形成业务、技术和管理层共用的 opportunity map。",
+    bullets: ["业务场景采集", "数据准备度评估", "价值与风险排序"],
   },
   {
     no: "02",
     id: "layer-02",
-    code: "Library",
+    code: "Logic",
     icon: "workflow",
-    title: "数据与知识工程",
-    desc: "构建高质量知识资产与企业知识库，为模型提供可靠语境。",
-    bullets: ["数据接入与治理", "知识库与向量化", "数据质量评估"],
+    title: "AI 方案工作台",
+    desc: "把模糊诉求转成可开发、可验收、可上线的 PRD、架构图、里程碑和风险清单。",
+    bullets: ["方案与 PRD 生成", "成功指标设计", "边界与风险定义"],
   },
   {
     no: "03",
     id: "layer-03",
-    code: "LLM",
+    code: "Lab",
     icon: "blocks",
-    title: "模型与工具编排",
-    desc: "选择与配置大模型和工具链，满足效果、成本与安全目标。",
-    bullets: ["模型选型与评测", "提示工程与编排", "工具/插件管理"],
+    title: "企业知识与 RAG",
+    desc: "把文档、制度、工单和业务知识转入可验证实验场，构建可权限治理、可引用溯源的知识应用。",
+    bullets: ["多源知识接入", "检索与生成实验", "权限感知问答"],
   },
   {
     no: "04",
     id: "layer-04",
     code: "Link",
     icon: "link",
-    title: "应用与集成开发",
-    desc: "将 AI 能力嵌入业务系统与流程，形成可使用的产品体验。",
-    bullets: ["应用开发与封装", "系统集成与 API", "自动化流程编排"],
+    title: "Agent 与 MCP 集成",
+    desc: "让 Agent 不只会聊天，而是能调用工具、连接系统、遵守权限并执行业务流程。",
+    bullets: ["MCP Server 构建", "企业 API 封装", "工具权限与审计"],
   },
   {
     no: "05",
     id: "layer-05",
-    code: "Lab",
+    code: "Launchpad",
     icon: "circleCheck",
-    title: "评测与验证体系",
-    desc: "建立多维评估体系，确保效果、安全与体验达标。",
-    bullets: ["自动化评测", "人工评审", "红队与安全测试"],
+    title: "AI 应用交付脚手架",
+    desc: "把常见企业 AI 场景快速做成可演示、可试点、可上线、可运维的业务应用。",
+    bullets: ["RAG/Agent 模板", "前后端脚手架", "试点包交付"],
   },
   {
     no: "06",
     id: "layer-06",
-    code: "Launch",
+    code: "Learn",
     icon: "rocket",
-    title: "部署与运营平台",
-    desc: "提供稳定可靠的运行环境，保障服务质量与成本可控。",
-    bullets: ["环境与部署管理", "监控与告警", "成本与配额管理"],
+    title: "Eval 与反馈学习",
+    desc: "建立问题集、rubric、回归测试和用户反馈机制，让 AI 效果能被度量、比较和持续改进。",
+    bullets: ["Eval 数据集", "质量看板", "错误归因与回归"],
   },
   {
     no: "07",
     id: "layer-07",
-    code: "Ledger",
+    code: "Live",
     icon: "activity",
-    title: "效果度量与分析",
-    desc: "度量业务效果与 AI 指标，驱动持续优化与决策。",
-    bullets: ["业务指标看板", "用户行为分析", "ROI 评估"],
+    title: "AI LiveOps 生产治理",
+    desc: "让 AI 应用上线后可运行、可观测、可审计、可控成本、可告警、可回滚。",
+    bullets: ["运行监控与 trace", "权限审计", "成本与配额治理"],
   },
   {
     no: "08",
     id: "layer-08",
     code: "Loop",
     icon: "shield",
-    title: "持续迭代与治理",
-    desc: "建立反馈闭环和治理机制，让系统持续进化并合规运行。",
-    bullets: ["反馈与迭代", "模型与知识更新", "安全与合规治理"],
+    title: "FDE Playbook 资产库",
+    desc: "把项目经验沉淀成模板、课程、连接器、runbook 和行业包，避免每次从零开始。",
+    bullets: ["交付 Playbook", "行业方案包", "项目复盘模板"],
   },
 ]
 
-// ===== 6L 方法论 =====
+// ===== xL 方法论 =====
 export type MethodStep = {
   no: string
   id: string
@@ -182,58 +182,67 @@ export const methodSteps: MethodStep[] = [
     id: "step-1",
     code: "Locate",
     icon: "compass",
-    title: "定位",
-    desc: "深入业务一线，发现真问题与价值机会，明确成功标准。",
-    bullets: ["访谈调研", "流程诊断", "价值评估"],
+    title: "定位真问题",
+    desc: "进入业务一线，识别真正影响指标、流程和采用的 AI 机会。",
+    bullets: ["业务访谈", "问题树拆解", "价值判断"],
   },
   {
     no: "2",
     id: "step-2",
     code: "Learn",
     icon: "book",
-    title: "学习",
-    desc: "吸收领域知识，完成数据接入、清洗与知识准备工作。",
-    bullets: ["知识吸收", "数据治理", "知识构建"],
+    title: "学习业务语境",
+    desc: "吸收行业术语、系统现状、数据来源、组织角色和约束条件。",
+    bullets: ["流程学习", "知识盘点", "系统上下文"],
   },
   {
     no: "3",
     id: "step-3",
     code: "Layer",
     icon: "layers",
-    title: "分层",
-    desc: "用 8L 结构拆解方案，设计可落地的分层架构。",
-    bullets: ["场景定义", "分层方案", "指标设定"],
+    title: "分层设计",
+    desc: "把需求拆成产品层、数据层、模型层、工具层、权限层和运营层。",
+    bullets: ["8L 映射", "架构分层", "验收边界"],
   },
   {
     no: "4",
     id: "step-4",
     code: "Link",
     icon: "link",
-    title: "连接",
-    desc: "开发与集成 AI 能力，与业务系统、知识库和工具打通。",
-    bullets: ["模型开发", "应用开发", "集成联调"],
+    title: "连接系统",
+    desc: "打通知识库、API、MCP、Agent 工具、权限、审计和企业业务系统。",
+    bullets: ["数据接入", "工具调用", "集成联调"],
   },
   {
     no: "5",
     id: "step-5",
     code: "Launch",
     icon: "rocket",
-    title: "上线",
-    desc: "试点验证后稳定上线，扩展到更多业务场景。",
-    bullets: ["试点上线", "效果评估", "扩展推广"],
+    title: "验证试点",
+    desc: "用小范围试点验证质量、流程、成本、用户采用和上线条件。",
+    bullets: ["试点上线", "Eval 评测", "问题闭环"],
   },
   {
     no: "6",
     id: "step-6",
+    code: "Leverage",
+    icon: "rocket",
+    title: "规模上线",
+    desc: "把验证过的能力复制到更多团队、流程和业务场景，形成组织杠杆。",
+    bullets: ["上线发布", "扩展推广", "培训赋能"],
+  },
+  {
+    no: "7",
+    id: "step-7",
     code: "Loop",
     icon: "activity",
-    title: "闭环",
-    desc: "持续运营优化，建立反馈闭环，让系统长期创造价值。",
-    bullets: ["监控运营", "迭代优化", "治理合规"],
+    title: "运营复盘",
+    desc: "用运行数据、用户反馈和项目复盘持续改进，并沉淀可复用资产。",
+    bullets: ["LiveOps 运营", "复盘改进", "资产沉淀"],
   },
 ]
 
-// ===== 3Do 工具 =====
+// ===== xDo 工具 =====
 export type DoTool = {
   id: string
   icon: string
@@ -250,10 +259,10 @@ export const doTools: DoTool[] = [
     icon: "rocket",
     name: "Doops",
     tagline: "部署 · 运维 · 远程执行",
-    desc: "面向部署、运维、远程执行和 Kubernetes 操作的工程入口，把 AI 应用从本地推向生产环境。",
+    desc: "面向部署、运维、远程执行和 Kubernetes 操作的工程入口，把 AI 应用从本地交付推向稳定生产环境。",
     bullets: ["远程运维入口", "集群发布", "运行态诊断"],
     features: [
-      { title: "一键发布", desc: "标���化发布流水线，从代码到集群一步到位。" },
+      { title: "一键发布", desc: "标准化发布流水线，从代码到集群一步到位。" },
       { title: "远程执行", desc: "安全的远程命令执行与批量运维操作。" },
       { title: "运行诊断", desc: "实时观测运行态指标，快速定位问题。" },
     ],
@@ -263,7 +272,7 @@ export const doTools: DoTool[] = [
     icon: "brain",
     name: "DoAgent",
     tagline: "Agent 编排 · 工具调用 · 任务执行",
-    desc: "面向 Agent 编排、工具调用和任务执行的运行引擎，让企业流程可以被 AI 自动执行。",
+    desc: "面向 Agent 编排、工具调用、任务执行和失败追踪的运行引擎，让企业流程可以被 AI 有边界地执行。",
     bullets: ["Agent 运行时", "工具调用", "任务编排"],
     features: [
       { title: "Agent 运行时", desc: "稳定可靠的 Agent 执行环境与上下文管理。" },
@@ -276,7 +285,7 @@ export const doTools: DoTool[] = [
     icon: "workflow",
     name: "DoDNS",
     tagline: "域名 · 证书 · 入口路由",
-    desc: "面向域名、解析、证书和入口路由的网络治理工具，保障 AI 应用稳定可访问。",
+    desc: "面向域名、解析、证书、Ingress 和入口路由的网络治理工具，保障官网、知识库和 AI 应用稳定可访问。",
     bullets: ["DNS 管理", "证书配置", "入口路由"],
     features: [
       { title: "DNS 管理", desc: "集中化的域名解析与记录管理。" },
@@ -287,10 +296,10 @@ export const doTools: DoTool[] = [
 ]
 
 export const knowledgeItems = [
-  { id: "knowledge-methods", icon: "compass", title: "方法论与指南", desc: "FDE 方法论、流程指引与最佳实践。" },
-  { id: "knowledge-scenarios", icon: "workflow", title: "行业与场景库", desc: "覆盖多行业 AI 场景与解决方案参考。" },
-  { id: "knowledge-tools", icon: "book", title: "模板与工具", desc: "提示词模板、评测集、脚本与 Do 系列自动化工具。" },
-  { id: "knowledge-cases", icon: "chat", title: "案例与复盘", desc: "真实项目案例与经验复盘沉淀。" },
+  { id: "knowledge-methods", icon: "compass", title: "方法论与指南", desc: "FDE、8L、xL、xDo 的流程指引、决策框架与交付标准。" },
+  { id: "knowledge-scenarios", icon: "workflow", title: "行业与场景库", desc: "沉淀制造、教育、零售、金融、政企等场景的 AI 机会地图和方案参考。" },
+  { id: "knowledge-tools", icon: "book", title: "模板与工具", desc: "访谈脚本、PRD 模板、Eval 数据集、上线清单和 Do 系列自动化脚本。" },
+  { id: "knowledge-cases", icon: "chat", title: "案例与复盘", desc: "把项目问题、技术路径、上线闸口和复盘结论转成可复用 playbook。" },
 ]
 
 export type CaseCard = {
@@ -304,65 +313,65 @@ export type CaseCard = {
 export const caseCards: CaseCard[] = [
   {
     id: "case-service",
-    tag: "智能客服",
-    title: "大型零售集团智能客服升级",
-    desc: "构建多模态知识客服，优化服务体验并降低人工成本。",
+    tag: "服务知识",
+    title: "服务知识助手交付蓝图",
+    desc: "围绕客服、售前和售后知识，构建带引用溯源、权限过滤和质量评测的 RAG 助手。",
     metrics: [
-      ["35%", "人工成本下降"],
-      ["28%", "问题解决率提升"],
+      ["RAG", "知识问答"],
+      ["Eval", "质量复盘"],
     ],
   },
   {
     id: "case-operation",
-    tag: "流程提效",
-    title: "制造企业设备运维 Copilot",
-    desc: "基于设备数据与知识库，提升巡检效率与准确率。",
+    tag: "运维流程",
+    title: "设备运维 Copilot 样板",
+    desc: "把设备文档、工单记录、巡检流程和工具调用连接起来，形成可审计的运维辅助流程。",
     metrics: [
-      ["42%", "巡检效率提升"],
-      ["60%", "故障识别准确率提升"],
+      ["Agent", "任务执行"],
+      ["MCP", "工具集成"],
     ],
   },
   {
     id: "case-growth",
-    tag: "营销增长",
-    title: "金融机构营销内容智能生成",
-    desc: "自动化生成合规营销内容，提升转化与产能。",
+    tag: "内容合规",
+    title: "营销内容生成与审核样板",
+    desc: "用模板、知识库、风控规则和人工复核流程，支持内容生成、合规检查和版本追踪。",
     metrics: [
-      ["3.2x", "内容生产效率"],
-      ["18%", "转化率提升"],
+      ["规则", "合规边界"],
+      ["流程", "人工复核"],
     ],
   },
   {
     id: "case-knowledge",
     tag: "知识管理",
-    title: "集团企业知识中台建设",
-    desc: "沉淀企业知识资产，提升检索效率与知识复用率。",
+    title: "集团知识中台建设路径",
+    desc: "从知识资产盘点、权限模型、检索评测到运营机制，帮助集团型组织建立统一知识入口。",
     metrics: [
-      ["55%", "检索效率提升"],
-      ["70%", "知识复用率提升"],
+      ["8L", "能力分层"],
+      ["Loop", "资产沉淀"],
     ],
   },
 ]
 
 export const footerColumns: { title: string; links: { label: string; href: string }[] }[] = [
   {
-    title: "核心产品",
+    title: "8L 产品分层",
     links: [
-      { label: "8L 产品体系", href: "/products" },
-      { label: "产品架构", href: "/products#layer-04" },
-      { label: "平台能力", href: "/products#layer-06" },
+      { label: "场景雷达", href: "/products#layer-01" },
+      { label: "方案工作台", href: "/products#layer-02" },
+      { label: "生产治理", href: "/products#layer-07" },
     ],
   },
   {
-    title: "方法论",
+    title: "xL 方法论",
     links: [
-      { label: "6L 方法论", href: "/method" },
-      { label: "交付流程", href: "/method#step-1" },
-      { label: "服务模式", href: "/method#step-6" },
+      { label: "问题定位", href: "/method#step-1" },
+      { label: "系统连接", href: "/method#step-4" },
+      { label: "运营复盘", href: "/method#step-7" },
     ],
   },
   {
-    title: "3Do 工具",
+    title: "xDo 工程引擎",
     links: [
       { label: "Doops", href: "/tools#doops" },
       { label: "DoAgent", href: "/tools#doagent" },

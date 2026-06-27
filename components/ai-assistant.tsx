@@ -5,7 +5,7 @@ import { useChat } from "@ai-sdk/react"
 import { DefaultChatTransport } from "ai"
 import { Icon } from "@/components/icon"
 
-const SUGGESTIONS = ["8L 核心产品是什么？", "6L 方法论怎么落地？", "3Do 工具有哪些？", "如何预约咨询？"]
+const SUGGESTIONS = ["8L 产品分层是什么？", "xL 方法论怎么落地？", "xDo 工具有哪些？", "如何预约咨询？"]
 
 function renderRich(text: string) {
   // 轻量渲染 **粗体**，其余按纯文本处理
@@ -85,7 +85,7 @@ export function AiAssistant() {
             {messages.length === 0 && (
               <div className="space-y-4">
                 <div className="rounded-xl rounded-tl-sm bg-muted px-3 py-2.5 text-sm text-foreground">
-                  你好，我是来八助手。关于 L8AI 的 8L 产品、6L 方法论、3Do 工具或课程，都可以问我。
+                  你好，我是来八助手。关于 L8AI 的 8L 产品分层、xL 方法论、xDo 工具或课程，都可以问我。
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {SUGGESTIONS.map((s) => (

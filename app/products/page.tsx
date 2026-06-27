@@ -4,17 +4,17 @@ import { PageHeader, CTA } from "@/components/ui-bits"
 import { productLayers } from "@/lib/site-content"
 
 export const metadata: Metadata = {
-  title: "8L 核心产品",
-  description: "8L 八层结构构建企业 AI 落地操作系统：机会洞察、知识工程、模型编排、应用集成、评测验证、部署运营、效果度量、持续治理。",
+  title: "8L 产品分层",
+  description: "8L 产品分层构建企业 AI 生产化操作系统：场景雷达、方案工作台、知识与 RAG、Agent/MCP 集成、应用脚手架、Eval、LiveOps、资产闭环。",
 }
 
 export default function ProductsPage() {
   return (
     <main>
       <PageHeader
-        eyebrow="8L 核心产品"
-        title="八层结构，构建企业 AI 落地操作系统"
-        desc="从机会识别到持续运营，8L 覆盖 AI 落地的全生命周期，每一层都有明确的输入、输出与验收标准。"
+        eyebrow="8L 产品分层"
+        title="构建企业 AI 生产化操作系统"
+        desc="从机会识别、知识实验、系统连接到上线治理，8L 覆盖企业 AI 的全生命周期，每一层都有明确的输入、输出与验收标准。"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">

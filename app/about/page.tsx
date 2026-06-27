@@ -5,13 +5,13 @@ import { company, heroProof } from "@/lib/site-content"
 
 export const metadata: Metadata = {
   title: "关于我们",
-  description: `${company.legalNameCn}（${company.brand}）专注企业 AI 落地，以 8L 核心产品、6L 方法论与 3Do 工程工具，帮助企业构建可持续的 AI 能力。`,
+  description: `${company.legalNameCn}（${company.brand}）专注企业 AI 生产化，以 FDE 现场工程、8L 产品分层、xL 交付路径与 xDo 工程工具链，帮助企业构建可持续的 AI 能力。`,
 }
 
 const values = [
   { icon: "compass", title: "业务导向", desc: "一切从业务价值出发，拒绝为了 AI 而 AI。" },
   { icon: "blocks", title: "工程化交付", desc: "用工程方法保证质量、效率与可维护性。" },
-  { icon: "shield", title: "安全可控", desc: "数据安全与合规贯穿落地全过程。" },
+  { icon: "shield", title: "安全可控", desc: "数据安全、权限治理与合规贯穿生产化全过程。" },
   { icon: "workflow", title: "长期陪伴", desc: "做企业 AI 旅程中可靠的长期伙伴。" },
 ]
 
@@ -20,8 +20,8 @@ export default function AboutPage() {
     <main>
       <PageHeader
         eyebrow="关于我们"
-        title="让企业 AI 落地变得可规划、可交付、可持续"
-        desc={`${company.legalNameCn}（${company.brand}）是一家专注企业 AI 落地的工程化服务公司，以 8L 核心产品、6L 方法论与 3Do 工程工具，陪伴企业走完 AI 从探索到规模化的全过程。`}
+        title="让企业 AI 生产化变得可规划、可交付、可持续"
+        desc={`${company.legalNameCn}（${company.brand}）是一家专注企业 AI 生产化的工程化服务公司，以 FDE 现场工程、8L 产品分层、xL 交付路径与 xDo 工程工具链，陪伴企业走完 AI 从探索到规模化的全过程。`}
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
@@ -29,11 +29,11 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-bold text-foreground">我们的使命</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              大模型时代，企业不缺 AI 的想象力，缺的是把 AI 真正落到业务、稳定运行并持续创造价值的工程能力。{company.brand}{" "}
+              大模型时代，企业不缺 AI 的想象力，缺的是把 AI 真正接入业务、稳定运行并持续创造价值的工程能力。{company.brand}{" "}
               以体系化的产品、方法论与工具，帮助企业跨越从 Demo 到生产、从单点到规模的鸿沟。
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              我们相信，AI 落地不是一次性项目，而是一段需要持续投入与迭代的旅程。{company.brand}{" "}
+              我们相信，AI 生产化不是一次性项目，而是一段需要持续投入与迭代的旅程。{company.brand}{" "}
               既提供方法与工具，也提供长期陪伴，让 AI 成为企业可掌控的核心能力。
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -53,7 +53,7 @@ export default function AboutPage() {
             <div className="sticky top-24 rounded-2xl border border-border bg-soft p-6 lg:p-8">
               <h2 className="text-lg font-bold text-foreground">联系我们</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                无论您处在 AI 落地的哪个阶段，我们都乐意与您交流，提供专业建议与可落地的方案。
+                无论您处在 AI 生产化的哪个阶段，我们都乐意与您交流，提供专业建议与可执行的方案。
               </p>
               <dl className="mt-6 space-y-4 text-sm">
                 <div>

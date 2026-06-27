@@ -110,16 +110,3 @@
     transform: scaleY(1);
   }
 }
-
-/* Floating accent blobs / glow */
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(-18px) translateX(10px);
-  }
-}
-.animate-float-slow {
-  animation: float-slow 9s ease-in-out infinite;
-}

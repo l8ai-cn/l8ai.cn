@@ -4,18 +4,18 @@ import { PageHeader, CTA } from "@/components/ui-bits"
 import { doTools } from "@/lib/site-content"
 
 export const metadata: Metadata = {
-  title: "3Do 工程工具",
+  title: "xDo 工程工具链",
   description:
-    "3Do 工程引擎：Doops 部署运维、DoAgent 执行引擎、DoDNS 网络治理，为企业 AI 应用提供从开发到生产的工程化支撑。",
+    "xDo 工程工具链：Doops 部署运维、DoAgent 执行引擎、DoDNS 网络治理，为企业 AI 应用提供从开发到生产的工程化支撑。",
 }
 
 export default function ToolsPage() {
   return (
     <main>
       <PageHeader
-        eyebrow="3Do 工程工具"
+        eyebrow="xDo 工程工具链"
         title="支撑 AI 应用从开发到生产的工程引擎"
-        desc="3Do 是 L8AI 自研的工程工具集，覆盖部署运维、Agent 执行与网络治理三大环节，让 AI 应用真正稳定运行在生产环境。"
+        desc="xDo 是 L8AI 的工程工具链，覆盖远程运维、Agent 执行、入口治理和运行诊断，让 AI 应用真正稳定运行在生产环境。"
       />
 
       <section className="mx-auto max-w-7xl space-y-8 px-5 py-16 lg:px-8 lg:py-24">
@@ -32,7 +32,7 @@ export default function ToolsPage() {
                     <Icon name={tool.icon} size={28} />
                   </span>
                   <div>
-                    <span className="font-mono text-xs font-semibold text-muted-foreground">0{i + 1} / 3Do</span>
+                    <span className="font-mono text-xs font-semibold text-muted-foreground">0{i + 1} / xDo</span>
                     <h2 className="text-2xl font-bold text-foreground">{tool.name}</h2>
                   </div>
                 </div>

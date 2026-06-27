@@ -8,11 +8,32 @@ const nextConfig = {
   turbopack: {
     root: __dirname,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: "/whitepapers/6l-methodology",
+        destination: "/whitepapers/xl-methodology",
+        permanent: true,
+      },
+      {
+        source: "/whitepapers/3do-engineering-engine",
+        destination: "/whitepapers/xdo-engineering-engine",
+        permanent: true,
+      },
+      {
+        source: "/blog/6l-delivery-rhythm",
+        destination: "/blog/xl-delivery-rhythm",
+        permanent: true,
+      },
+      {
+        source: "/blog/3do-engineering-engine",
+        destination: "/blog/xdo-engineering-engine",
+        permanent: true,
+      },
+    ]
   },
 }
 
