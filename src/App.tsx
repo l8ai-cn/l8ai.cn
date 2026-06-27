@@ -1,355 +1,522 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from "react";
+import logoUrl from "./assets/l8ai-logo.svg";
+import { Icon } from "./components/Icon";
+import {
+  caseCards,
+  company,
+  courseCatalogIntro,
+  courses,
+  courseTracks,
+  doEngineItems,
+  footerColumns,
+  heroProof,
+  knowledgeItems,
+  methodSteps,
+  navItems,
+  productModules,
+} from "./data/siteContent";
 
-interface NavLink {
-  name: string
-  href: string
+function useHashRoute() {
+  const [hash, setHash] = useState(() => window.location.hash || "#/");
+
+  useEffect(() => {
+    const onHashChange = () => setHash(window.location.hash || "#/");
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  return hash;
 }
 
-interface Product {
-  id: number
-  name: string
-  desc: string
-  icon: string
-}
-
-interface FDEStep {
-  number: number
-  name: string
-  desc: string
-}
-
-interface Knowledge {
-  id: number
-  title: string
-  desc: string
-}
-
-interface CaseItem {
-  id: number
-  tag: string
-  title: string
-  desc: string
-  link: string
-}
-
-const App: React.FC = () => {
-  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null)
-
-  const navLinks: NavLink[] = [
-    { name: '产品', href: '#products' },
-    { name: '方案', href: '#solutions' },
-    { name: '客户案例', href: '#cases' },
-    { name: '文档', href: '#docs' },
-    { name: '关于', href: '#about' },
-  ]
-
-  const products: Product[] = [
-    { id: 1, name: '智能对话', desc: '自然语言处理与交互引擎', icon: '💬' },
-    { id: 2, name: '文档分析', desc: '多格式文档智能理解', icon: '📄' },
-    { id: 3, name: '数据挖掘', desc: '结构化数据深度分析', icon: '⛏️' },
-    { id: 4, name: '代码生成', desc: '智能代码自动化生成', icon: '⚙️' },
-    { id: 5, name: '图像识别', desc: '图像内容与场景理解', icon: '🖼️' },
-    { id: 6, name: '知识库', desc: '企业知识智能管理', icon: '📚' },
-    { id: 7, name: '流程自动化', desc: '业务流程智能化', icon: '🔄' },
-    { id: 8, name: '实时决策', desc: '数据驱动决策引擎', icon: '🎯' },
-  ]
-
-  const fdeSteps: FDEStep[] = [
-    { number: 1, name: '数据收集', desc: 'Fetch' },
-    { number: 2, name: '数据清洗', desc: 'Clean' },
-    { number: 3, name: '特征工程', desc: 'Extract' },
-    { number: 4, name: '模型训练', desc: 'Train' },
-    { number: 5, name: '模型评估', desc: 'Validate' },
-    { number: 6, name: '部署推理', desc: 'Deploy' },
-    { number: 7, name: '持续优化', desc: 'Optimize' },
-  ]
-
-  const knowledge: Knowledge[] = [
-    { id: 1, title: '企业AI部署指南', desc: '详解如何在企业级应用中快速部署AI解决方案，包括架构设计和最佳实践' },
-    { id: 2, title: 'LLM微调技巧', desc: '掌握大语言模型的微调方法，实现行业特定的高精度应用' },
-    { id: 3, title: 'RAG知识库构建', desc: '构建检索增强型生成系统，提升AI应用的准确性和实时性' },
-    { id: 4, title: '多模态应用开发', desc: '整合文本、图像、音频多个维度，打造综合性AI服务' },
-  ]
-
-  const cases: CaseItem[] = [
-    {
-      id: 1,
-      tag: '金融',
-      title: '风险识别系统',
-      desc: '实现97%准确率的金融风险预测，日处理交易1000万+笔',
-      link: '查看案例 →',
-    },
-    {
-      id: 2,
-      tag: '制造',
-      title: '生产质检自动化',
-      desc: '缺陷检出率提升45%，单位成本下降38%，产能提升20%',
-      link: '查看案例 →',
-    },
-    {
-      id: 3,
-      tag: '医疗',
-      title: '影像诊断辅助',
-      desc: '医学影像分析精度达99.2%，诊疗效率提升60%以上',
-      link: '查看案例 →',
-    },
-  ]
+function Header() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
 
   return (
-    <div style={{ backgroundColor: '#ffffff' }}>
-      {/* Navigation */}
-      <nav className="navbar">
-        <div className="logo">
-          <span>L8AI</span>
-        </div>
-        <ul className="nav-links">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <a href={link.href}>{link.name}</a>
-            </li>
-          ))}
-        </ul>
-        <button className="nav-cta">免费试用</button>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="hero" className="section">
-        <div className="container">
-          <div className="hero">
-            <div className="hero-content">
-              <h1>企业级AI工作台</h1>
-              <p>
-                L8AI为企业提供端到端的人工智能解决方案，集成自然语言处理、计算机视觉、机器学习等核心能力，帮助企业快速构建和部署AI应用。
-              </p>
-              <button className="hero-cta">立即开始</button>
-              <p style={{ fontSize: '0.85rem', color: '#9ca3af' }}>
-                ✓ 30分钟快速上手 &nbsp;&nbsp; ✓ 企业级安全认证 &nbsp;&nbsp; ✓ 24/7技术支持
-              </p>
-            </div>
-            <div className="hero-workbench">
-              <div style={{ width: '100%', marginBottom: '1rem' }}>
-                <div className="workbench-grid">
-                  <div className="workbench-cell">数据导入</div>
-                  <div className="workbench-cell">模型选择</div>
-                  <div className="workbench-cell">参数配置</div>
-                  <div className="workbench-cell">训练调优</div>
-                  <div className="workbench-cell">结果评估</div>
-                  <div className="workbench-cell">云端部署</div>
-                  <div className="workbench-cell">API调用</div>
-                  <div className="workbench-cell">数据分析</div>
-                  <div className="workbench-cell">监控预警</div>
-                </div>
-              </div>
-              <div className="workbench-label">AI Workbench - 可视化工作平台</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section id="products" className="section">
-        <div className="container">
-          <h2>核心产品模块</h2>
-          <p style={{ marginBottom: '2rem' }}>
-            8大产品能力覆盖企业AI应用全场景，开箱即用
-          </p>
-          <div className="products-grid">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="product-card"
-                style={hoveredProduct === product.id ? { transform: 'translateY(-4px)' } : undefined}
-                onMouseEnter={() => setHoveredProduct(product.id)}
-                onMouseLeave={() => setHoveredProduct(null)}
-              >
-                <div className="product-icon">{product.icon}</div>
-                <h3>{product.name}</h3>
-                <p>{product.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FDE Method Section */}
-      <section id="method" className="section">
-        <div className="container">
-          <h2>FDE七步方法论</h2>
-          <p style={{ marginBottom: '2rem' }}>
-            从数据到决策，科学的AI开发流程保证高质量交付
-          </p>
-          <div className="fde-steps">
-            {fdeSteps.map((step) => (
-              <div key={step.number} className="fde-step">
-                <div className="fde-number">{step.number}</div>
-                <h4>{step.name}</h4>
-                <p>{step.desc}</p>
-              </div>
-            ))}
-          </div>
-          <p
-            style={{
-              textAlign: 'center',
-              marginTop: '2rem',
-              color: '#9ca3af',
-              fontSize: '0.9rem',
-            }}
-          >
-            这套方法论已在1000+企业项目中验证成功，平均项目周期缩短45%，质量提升60%
-          </p>
-        </div>
-      </section>
-
-      {/* Knowledge Section */}
-      <section id="knowledge" className="section">
-        <div className="container">
-          <h2>知识库与最佳实践</h2>
-          <p style={{ marginBottom: '2rem' }}>
-            从入门到精通，我们为您准备了完整的学习资源
-          </p>
-          <div className="knowledge-grid">
-            {knowledge.map((item) => (
-              <div key={item.id} className="knowledge-item">
-                <div className="knowledge-content">
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Cases Section */}
-      <section id="cases" className="section">
-        <div className="container">
-          <h2>客户案例</h2>
-          <p style={{ marginBottom: '2rem' }}>
-            看看其他企业如何通过L8AI实现AI驱动的业务增长
-          </p>
-          <div className="cases-grid">
-            {cases.map((caseItem) => (
-              <div key={caseItem.id} className="case-card">
-                <div className="case-image">{caseItem.tag}</div>
-                <div className="case-content">
-                  <span className="case-tag">{caseItem.tag}</span>
-                  <h3>{caseItem.title}</h3>
-                  <p>{caseItem.desc}</p>
-                  <a href="#" className="case-link">
-                    {caseItem.link}
+    <header className="site-header">
+      <a className="brand" href="#top" onClick={close} aria-label="L8AI 首页">
+        <img src={logoUrl} alt="L8AI" />
+      </a>
+      <nav className="desktop-nav" aria-label="主导航">
+        {navItems.map((item) => (
+          <div className="nav-item" key={item.href}>
+            <a className="nav-link" href={item.href}>
+              <span>{item.label}</span>
+              {item.children && <span className="nav-caret">⌄</span>}
+            </a>
+            {item.children && (
+              <div className="nav-submenu" role="menu">
+                {item.children.map((child) => (
+                  <a href={child.href} key={`${item.label}-${child.label}-${child.href}`} role="menuitem">
+                    {child.label}
                   </a>
-                </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section
-        id="cta"
-        style={{
-          backgroundColor: '#f3f4f6',
-          padding: '4rem 0',
-          borderTop: '1px solid #bfdbfe',
-          textAlign: 'center',
-        }}
+        ))}
+      </nav>
+      <div className="header-actions">
+        <a href="#login" className="login-link">
+          登录
+        </a>
+        <a href="#contact" className="primary-button small">
+          预约咨询
+        </a>
+      </div>
+      <button
+        className="mobile-menu"
+        type="button"
+        aria-label={open ? "关闭导航" : "打开导航"}
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
       >
-        <div className="container">
-          <h2 style={{ color: '#1e40af' }}>开始您的AI之旅</h2>
-          <p style={{ marginBottom: '2rem', fontSize: '1.05rem' }}>
-            加入1000+企业，共同探索AI的无限可能
-          </p>
-          <button className="hero-cta">立即申请免费试用</button>
-          <p style={{ marginTop: '1.5rem', color: '#9ca3af', fontSize: '0.9rem' }}>
-            无需信用卡，5分钟即可获得完整体验
-          </p>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-section">
-              <h4>产品</h4>
-              <ul>
-                <li>
-                  <a href="#products">所有模块</a>
-                </li>
-                <li>
-                  <a href="#pricing">价格方案</a>
-                </li>
-                <li>
-                  <a href="#api">API文档</a>
-                </li>
-                <li>
-                  <a href="#sdk">SDK下载</a>
-                </li>
-              </ul>
+        <Icon name="menu" size={20} />
+      </button>
+      {open && (
+        <nav className="mobile-nav" aria-label="移动导航">
+          {navItems.map((item) => (
+            <div className="mobile-nav-group" key={item.href}>
+              <a href={item.href} onClick={close}>
+                {item.label}
+              </a>
+              {item.children && (
+                <div className="mobile-subnav">
+                  {item.children.map((child) => (
+                    <a href={child.href} key={`${item.label}-${child.label}-${child.href}`} onClick={close}>
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
-            <div className="footer-section">
-              <h4>方案</h4>
-              <ul>
-                <li>
-                  <a href="#enterprise">企业解决方案</a>
-                </li>
-                <li>
-                  <a href="#fintech">金融科技</a>
-                </li>
-                <li>
-                  <a href="#manufacturing">制造业</a>
-                </li>
-                <li>
-                  <a href="#healthcare">医疗健康</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-section">
-              <h4>资源</h4>
-              <ul>
-                <li>
-                  <a href="#blog">技术博客</a>
-                </li>
-                <li>
-                  <a href="#cases">客户案例</a>
-                </li>
-                <li>
-                  <a href="#webinar">在线讲座</a>
-                </li>
-                <li>
-                  <a href="#community">开发者社区</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-section">
-              <h4>公司</h4>
-              <ul>
-                <li>
-                  <a href="#about">关于我们</a>
-                </li>
-                <li>
-                  <a href="#contact">联系我们</a>
-                </li>
-                <li>
-                  <a href="#careers">招聘信息</a>
-                </li>
-                <li>
-                  <a href="#privacy">隐私政策</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>
-              &copy; 2024 L8AI. All rights reserved. | 京ICP备xxxxxx号 | 隐私政策
-              | 服务条款
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  )
+          ))}
+          <a href="#contact" className="mobile-nav-action" onClick={close}>
+            预约咨询
+          </a>
+        </nav>
+      )}
+    </header>
+  );
 }
 
-export default App
+function HeroWorkbench() {
+  const leftItems = ["问题与机会", "方案设计", "数据与知识", "模型与工具", "应用与集成", "评测与验证", "部署与运营", "效果与迭代"];
+  const flowItems = ["问题与机会", "方案设计", "数据与知识", "模型与工具", "应用与集成", "评测与验证", "部署与运营", "效果与迭代"];
+
+  return (
+    <div className="workbench-card" aria-label="L8AI 企业 AI 落地工作台">
+      <div className="workbench-title">L8AI 企业 AI 落地工作台</div>
+      <div className="workbench-body">
+        <div className="workbench-side">
+          {leftItems.map((item, index) => (
+            <div className={index === 0 ? "active" : ""} key={item}>
+              <Icon name={index % 2 === 0 ? "circleCheck" : "workflow"} size={15} />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+        <div className="workbench-flow">
+          {flowItems.map((item, index) => (
+            <div className="flow-node" key={item}>
+              {index < flowItems.length - 2 && <span className="flow-line vertical" aria-hidden="true" />}
+              {index % 2 === 0 && <span className="flow-line horizontal" aria-hidden="true" />}
+              <Icon name={["search", "book", "layers", "blocks", "workflow", "circleCheck", "rocket", "activity"][index]} size={18} />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+        <div className="metric-board">
+          <span>业务价值看板</span>
+          <strong>23</strong>
+          <small>上线应用数</small>
+          <strong>128 万</strong>
+          <small>月度调用量</small>
+          <strong>68%</strong>
+          <small>业务覆盖率</small>
+          <strong>4.7 / 5</strong>
+          <small>综合满意度</small>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="hero-section" id="top">
+      <div className="hero-grid">
+        <div className="hero-copy">
+          <h1>把 AI 从 Demo 推进到真实业务系统</h1>
+          <p>
+            L8AI 企业 AI 实战（FDE Forward Deployed Engineering）以工程化方法与业务闭环，帮助企业快速落地可运营、可度量、可持续进化的 AI 解决方案。
+          </p>
+          <div className="hero-actions">
+            <a href="#contact" className="primary-button">
+              预约咨询
+            </a>
+            <a href="#method" className="secondary-button">
+              了解 FDE 方法论
+            </a>
+          </div>
+        </div>
+        <HeroWorkbench />
+      </div>
+      <div className="hero-proof">
+        {heroProof.map((item) => (
+          <div key={item.label}>
+            <Icon name={item.icon} size={18} />
+            <span>{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Modules() {
+  return (
+    <section className="section modules-section" id="modules">
+      <SectionTitle
+        title="八大产品模块，构建企业 AI 落地操作系统"
+        desc="从机会识别到持续运营，覆盖 AI 落地的全生命周期"
+      />
+      <div className="module-frame">
+        {productModules.map((module) => (
+          <article className="module-card" id={`module-${module.no}`} key={module.no}>
+            <div className="module-badge">{module.no}</div>
+            <Icon name={module.icon} size={40} />
+            <div>
+              <h3>{module.title}</h3>
+              <p>{module.desc}</p>
+              <ul>
+                {module.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Method() {
+  return (
+    <section className="section method-section" id="method">
+      <SectionTitle
+        title="FDE 方法论：从问题到价值的工程化路径"
+        desc="Forward Deployed Engineering，前沿部署工程，让 AI 真正产生业务价值"
+      />
+      <div className="method-chain">
+        {methodSteps.map((step, index) => (
+          <article className="method-card" id={`method-${step.no.replace(".", "")}`} key={step.no}>
+            <span className="method-no">{step.no}</span>
+            <div className="method-icon">
+              <Icon name={step.icon} size={34} />
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+            <ul>
+              {step.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+            {index < methodSteps.length - 1 && <span className="method-arrow">›</span>}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function DoEngine() {
+  return (
+    <section className="section do-engine-section" id="do-engine">
+      <SectionTitle title="xDo 工程引擎：Do 系列工具支撑真实交付" desc="Doops、DoAgent、DoDNS 组成部署、执行、网络与治理的工程底座" />
+      <div className="do-engine-grid">
+        {doEngineItems.map((item) => (
+          <article className="do-engine-card" id={item.id} key={item.id}>
+            <Icon name={item.icon} size={36} />
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+            <ul>
+              {item.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Knowledge() {
+  return (
+    <section className="section knowledge-section" id="knowledge">
+      <span className="anchor-target" id="resources" aria-hidden="true" />
+      <SectionTitle title="知识库：AI 落地的实战指南与工程资产" desc="方法、模板、案例、工具一站式资源中心，助力团队少走弯路" />
+      <div className="knowledge-grid">
+        {knowledgeItems.map((item) => (
+          <article id={item.id} key={item.title}>
+            <Icon name={item.icon} size={34} />
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </article>
+        ))}
+      </div>
+      <a href="#resources" className="outline-button">
+        进入知识库
+      </a>
+    </section>
+  );
+}
+
+function Cases() {
+  return (
+    <section className="section cases-section" id="cases">
+      <SectionTitle title="实践证明：与领先企业共创真实价值" desc="深入业务一线，交付可衡量的结果" />
+      <div className="case-grid">
+        {caseCards.map((card) => (
+          <article className="case-card" id={card.id} key={card.title}>
+            <span>{card.tag}</span>
+            <h3>{card.title}</h3>
+            <p>{card.desc}</p>
+            <div className="case-metrics">
+              {card.metrics.map(([value, label]) => (
+                <div key={label}>
+                  <strong>{value}</strong>
+                  <small>{label}</small>
+                </div>
+              ))}
+            </div>
+            <a href="#contact">查看案例 →</a>
+          </article>
+        ))}
+      </div>
+      <a href="#contact" className="outline-button">
+        查看更多案例
+      </a>
+    </section>
+  );
+}
+
+function CoursesCatalog() {
+  const params = new URLSearchParams(window.location.hash.split("?")[1] ?? "");
+  const track = params.get("track");
+  const visibleCourses = track ? courses.filter((course) => course.track === track) : courses;
+
+  return (
+    <main>
+      <section className="course-hero">
+        <p className="course-eyebrow">L8AI Academy</p>
+        <h1>{courseCatalogIntro.title}</h1>
+        <p>{courseCatalogIntro.desc}</p>
+        <div className="course-track-tabs">
+          <a href="#/courses" className={!track ? "active" : undefined}>
+            全部课程
+          </a>
+          {courseTracks.map((item) => (
+            <a href={item.href} className={track === item.track ? "active" : undefined} key={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </section>
+      <section className="course-list-section">
+        <div className="course-list">
+          {visibleCourses.map((course) => (
+            <article className="course-card" key={course.id}>
+              <div className="course-card-top">
+                <span className="course-track">{course.track}</span>
+                <span className="course-level">{course.level}</span>
+              </div>
+              <h2>{course.title}</h2>
+              <p>{course.subtitle}</p>
+              <dl>
+                <div>
+                  <dt>对象</dt>
+                  <dd>{course.audience}</dd>
+                </div>
+                <div>
+                  <dt>周期</dt>
+                  <dd>{course.duration}</dd>
+                </div>
+                <div>
+                  <dt>产出</dt>
+                  <dd>{course.outcome}</dd>
+                </div>
+              </dl>
+              <a href={`#/courses/${course.id}`} className="course-card-action">
+                查看课程详情
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function CourseDetailPage({ courseId }: { courseId: string }) {
+  const course = courses.find((item) => item.id === courseId);
+
+  if (!course) {
+    return <CourseNotFound />;
+  }
+
+  return (
+    <main>
+      <section className="course-detail-hero">
+        <div className="course-detail-hero-grid">
+          <div>
+            <a href="#/courses" className="course-eyebrow">
+              返回课程总览 · {course.track}
+            </a>
+            <h1>{course.pageTitle}</h1>
+            <p>{course.summary}</p>
+          </div>
+          <div className="course-detail-panel">
+            <h2>课程信息</h2>
+            <div className="course-meta-grid">
+              <div>
+                <span>适合对象</span>
+                <strong>{course.audience}</strong>
+              </div>
+              <div>
+                <span>课程周期</span>
+                <strong>{course.duration}</strong>
+              </div>
+              <div>
+                <span>难度级别</span>
+                <strong>{course.level}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="course-detail-section">
+        <SectionTitle title="课程模块与交付产物" desc={course.outcome} />
+        <div className="course-module-list">
+          {course.modules.map((module, index) => (
+            <article className="course-module-card" key={`${course.id}-${module.title}`}>
+              <span className="course-module-no">{String(index + 1).padStart(2, "0")}</span>
+              <div>
+                <h3>{module.title}</h3>
+                <p>{module.objective}</p>
+              </div>
+              <strong>{module.deliverable}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="course-tools-section">
+        <h2>配套工具与资产</h2>
+        <div className="course-tools-grid">
+          {course.tools.map((tool) => (
+            <span className="course-tool-pill" key={`${course.id}-${tool}`}>
+              {tool}
+            </span>
+          ))}
+        </div>
+      </section>
+      <CTA />
+    </main>
+  );
+}
+
+function CourseNotFound() {
+  return (
+    <main>
+      <section className="course-hero">
+        <p className="course-eyebrow">L8AI Academy</p>
+        <h1>课程不存在</h1>
+        <p>当前课程链接没有匹配到已发布课程。</p>
+        <a href="#/courses" className="primary-button">
+          返回课程总览
+        </a>
+      </section>
+    </main>
+  );
+}
+
+function CTA() {
+  return (
+    <section className="cta-section" id="contact">
+      <div>
+        <h2>从今天开始，让 AI 真正为业务创造价值</h2>
+        <p>与 {company.brand} 专家团队交流，定制属于您的落地路径</p>
+        <a href="mailto:contact@l8ai.cn" className="light-button">
+          预约咨询
+        </a>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="site-footer" id="about">
+      <div className="footer-company">
+        <img src={logoUrl} alt="L8AI" />
+        <p>{company.legalNameCn}</p>
+        <p>{company.legalNameEn}</p>
+        <p>{company.slogan}</p>
+      </div>
+      {footerColumns.map((column) => (
+        <div className="footer-column" key={column[0]}>
+          <h3>{column[0]}</h3>
+          {column.slice(1).map((item) => (
+            <a href="#top" key={item}>
+              {item}
+            </a>
+          ))}
+        </div>
+      ))}
+      <div className="qr-box">
+        <div>QR</div>
+        <span>关注 L8AI 公众号</span>
+        <small>获取最新洞察与咨询</small>
+      </div>
+      <div className="footer-bottom">© 2026 {company.legalNameEn}. All rights reserved.</div>
+    </footer>
+  );
+}
+
+function SectionTitle({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="section-title">
+      <h2>{title}</h2>
+      <p>{desc}</p>
+    </div>
+  );
+}
+
+export function App() {
+  const hash = useHashRoute();
+  const courseDetailMatch = hash.match(/^#\/courses\/([^?]+)/);
+  const isCourseCatalog = hash.startsWith("#/courses") && !courseDetailMatch;
+
+  return (
+    <>
+      <Header />
+      {courseDetailMatch ? (
+        <CourseDetailPage courseId={courseDetailMatch[1]} />
+      ) : isCourseCatalog ? (
+        <CoursesCatalog />
+      ) : (
+        <main>
+          <Hero />
+          <Modules />
+          <Method />
+          <Knowledge />
+          <Cases />
+          <CTA />
+        </main>
+      )}
+      <Footer />
+    </>
+  );
+}
