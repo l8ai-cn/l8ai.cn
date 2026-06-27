@@ -10,10 +10,13 @@ import {
   doEngineItems,
   footerColumns,
   heroProof,
+  insightArticles,
   knowledgeItems,
   methodSteps,
   navItems,
   productModules,
+  researchSignals,
+  resourceMaterials,
 } from "./data/siteContent";
 
 function useHashRoute() {
@@ -256,7 +259,6 @@ function DoEngine() {
 function Knowledge() {
   return (
     <section className="section knowledge-section" id="knowledge">
-      <span className="anchor-target" id="resources" aria-hidden="true" />
       <SectionTitle title="知识库：AI 落地的实战指南与工程资产" desc="方法、模板、案例、工具一站式资源中心，助力团队少走弯路" />
       <div className="knowledge-grid">
         {knowledgeItems.map((item) => (
@@ -269,6 +271,75 @@ function Knowledge() {
       </div>
       <a href="#resources" className="outline-button">
         进入知识库
+      </a>
+    </section>
+  );
+}
+
+function Resources() {
+  return (
+    <section className="section resources-section" id="resources">
+      <SectionTitle title="资源中心：把 FDE 经验沉淀成可复用资产" desc="清单、模板、评测集、课程包和研究信号，服务从试点到生产的完整路径" />
+      <div className="resource-grid">
+        {resourceMaterials.map((item) => (
+          <article className="resource-card" id={item.id} key={item.id}>
+            <div className="resource-icon">
+              <Icon name={item.icon} size={28} />
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+            <ul>
+              {item.items.map((entry) => (
+                <li key={entry}>{entry}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+      <div className="research-panel" id="research-signals">
+        <div>
+          <span className="section-kicker">Research Signals</span>
+          <h3>从公开岗位和本地研究提炼的 FDE 信号</h3>
+          <p>这些信号说明企业 AI 落地正在从“做出 Demo”转向“部署、评测、治理、采用和产品化”。</p>
+        </div>
+        <div className="signal-list">
+          {researchSignals.map((signal) => (
+            <article key={signal.title}>
+              <span>{signal.source}</span>
+              <h4>{signal.title}</h4>
+              <p>{signal.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Insights() {
+  return (
+    <section className="section insights-section" id="insights">
+      <SectionTitle title="洞察文章：面向 CTO 的 AI 落地判断" desc="围绕 Demo 到生产、8L 产品分层、xDo 工程底座和 FDE 能力模型持续输出" />
+      <div className="article-grid">
+        {insightArticles.map((article) => (
+          <article className="article-card" key={article.id}>
+            <div className="article-card-top">
+              <span>{article.tag}</span>
+              <small>{article.readTime}</small>
+            </div>
+            <h3>{article.title}</h3>
+            <p>{article.summary}</p>
+            <ul>
+              {article.bullets.slice(0, 2).map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+            <a href={`#/articles/${article.id}`}>阅读全文 →</a>
+          </article>
+        ))}
+      </div>
+      <a href="#/articles" className="outline-button">
+        查看全部文章
       </a>
     </section>
   );
@@ -300,6 +371,99 @@ function Cases() {
         查看更多案例
       </a>
     </section>
+  );
+}
+
+function ArticlesPage() {
+  return (
+    <main>
+      <section className="article-list-hero">
+        <p className="course-eyebrow">L8AI Insights</p>
+        <h1>企业 AI 落地文章与材料</h1>
+        <p>从本地 FDE 研究、8L 产品规划、xDo 工具体系和真实交付问题中整理出的官网文章库。</p>
+      </section>
+      <section className="article-list-section">
+        <div className="article-list">
+          {insightArticles.map((article) => (
+            <article className="article-list-item" key={article.id}>
+              <div>
+                <span className="article-tag">{article.tag}</span>
+                <h2>{article.title}</h2>
+                <p>{article.summary}</p>
+              </div>
+              <div className="article-list-meta">
+                <span>{article.audience}</span>
+                <strong>{article.readTime}</strong>
+                <a href={`#/articles/${article.id}`}>阅读详情</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function ArticleDetailPage({ articleId }: { articleId: string }) {
+  const article = insightArticles.find((item) => item.id === articleId);
+
+  if (!article) {
+    return <ArticleNotFound />;
+  }
+
+  return (
+    <main>
+      <section className="article-detail-hero">
+        <a href="#/articles" className="course-eyebrow">
+          返回文章列表 · {article.tag}
+        </a>
+        <h1>{article.title}</h1>
+        <p>{article.subtitle}</p>
+        <div className="article-hero-meta">
+          <span>{article.audience}</span>
+          <span>{article.readTime}</span>
+        </div>
+      </section>
+      <section className="article-detail-layout">
+        <aside className="article-aside">
+          <h2>核心判断</h2>
+          <p>{article.thesis}</p>
+          <h3>决策清单</h3>
+          <ul>
+            {article.checklist.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </aside>
+        <article className="article-content">
+          <p className="article-lead">{article.summary}</p>
+          {article.sections.map((section) => (
+            <section key={section.heading}>
+              <h2>{section.heading}</h2>
+              {section.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </section>
+          ))}
+        </article>
+      </section>
+      <CTA />
+    </main>
+  );
+}
+
+function ArticleNotFound() {
+  return (
+    <main>
+      <section className="article-list-hero">
+        <p className="course-eyebrow">L8AI Insights</p>
+        <h1>文章不存在</h1>
+        <p>当前文章链接没有匹配到已发布内容。</p>
+        <a href="#/articles" className="primary-button">
+          返回文章列表
+        </a>
+      </section>
+    </main>
   );
 }
 
@@ -497,12 +661,18 @@ function SectionTitle({ title, desc }: { title: string; desc: string }) {
 export function App() {
   const hash = useHashRoute();
   const courseDetailMatch = hash.match(/^#\/courses\/([^?]+)/);
+  const articleDetailMatch = hash.match(/^#\/articles\/([^?]+)/);
   const isCourseCatalog = hash.startsWith("#/courses") && !courseDetailMatch;
+  const isArticleList = hash.startsWith("#/articles") && !articleDetailMatch;
 
   return (
     <>
       <Header />
-      {courseDetailMatch ? (
+      {articleDetailMatch ? (
+        <ArticleDetailPage articleId={articleDetailMatch[1]} />
+      ) : isArticleList ? (
+        <ArticlesPage />
+      ) : courseDetailMatch ? (
         <CourseDetailPage courseId={courseDetailMatch[1]} />
       ) : isCourseCatalog ? (
         <CoursesCatalog />
@@ -511,7 +681,10 @@ export function App() {
           <Hero />
           <Modules />
           <Method />
+          <DoEngine />
           <Knowledge />
+          <Resources />
+          <Insights />
           <Cases />
           <CTA />
         </main>
