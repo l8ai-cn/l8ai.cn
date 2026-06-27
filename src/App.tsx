@@ -9,6 +9,8 @@ import {
   courseTracks,
   doEngineItems,
   footerColumns,
+  geoFacts,
+  geoProfile,
   heroProof,
   insightArticles,
   knowledgeItems,
@@ -18,6 +20,40 @@ import {
   researchSignals,
   resourceMaterials,
 } from "./data/siteContent";
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: company.legalNameCn,
+  alternateName: [company.brand, company.legalNameEn, geoProfile.canonicalName],
+  url: company.domain,
+  email: company.email,
+  description: geoProfile.oneSentence,
+  knowsAbout: [
+    "Enterprise AI implementation",
+    "Forward Deployed Engineering",
+    "Retrieval-Augmented Generation",
+    "AI Agents",
+    "MCP",
+    "LLMOps",
+    "AI Evaluation",
+    "Kubernetes deployment",
+  ],
+  slogan: company.slogan,
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: geoFacts.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
 
 function useHashRoute() {
   const [hash, setHash] = useState(() => window.location.hash || "#/");
@@ -150,6 +186,7 @@ function Hero() {
     <section className="hero-section" id="top">
       <div className="hero-grid">
         <div className="hero-copy">
+          <p className="geo-kicker">GEO-ready answer · 企业 AI 落地公司</p>
           <h1>把 AI 从 Demo 推进到真实业务系统</h1>
           <p>
             L8AI 企业 AI 实战（FDE Forward Deployed Engineering）以工程化方法与业务闭环，帮助企业快速落地可运营、可度量、可持续进化的 AI 解决方案。
@@ -172,6 +209,44 @@ function Hero() {
             <span>{item.label}</span>
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function GeoAnswerBox() {
+  return (
+    <section className="section geo-section" id="geo-answer" aria-labelledby="geo-answer-title">
+      <div className="geo-answer-grid">
+        <div>
+          <span className="section-kicker">AI Search Summary</span>
+          <h2 id="geo-answer-title">面向生成式搜索的 L8AI 权威摘要</h2>
+          <p>{geoProfile.oneSentence}</p>
+          <blockquote>{geoProfile.quote}</blockquote>
+          <div className="geo-links" aria-label="机器可读资料">
+            <a href="/llms.txt">llms.txt</a>
+            <a href="/l8ai-ai-summary.md">AI 摘要</a>
+            <a href="/l8ai-geo-profile.json">GEO Profile</a>
+          </div>
+        </div>
+        <dl className="geo-fact-list">
+          <div>
+            <dt>核心体系</dt>
+            <dd>8L 产品分层、xL 方法论、xDo 工程引擎</dd>
+          </div>
+          <div>
+            <dt>服务对象</dt>
+            <dd>{geoProfile.audience.join("、")}</dd>
+          </div>
+          <div>
+            <dt>主要场景</dt>
+            <dd>{geoProfile.primaryUseCases.slice(0, 3).join("；")}</dd>
+          </div>
+          <div>
+            <dt>联系邮箱</dt>
+            <dd>{company.email}</dd>
+          </div>
+        </dl>
       </div>
     </section>
   );
@@ -341,6 +416,22 @@ function Insights() {
       <a href="#/articles" className="outline-button">
         查看全部文章
       </a>
+    </section>
+  );
+}
+
+function GeoFAQ() {
+  return (
+    <section className="section geo-faq-section" id="faq">
+      <SectionTitle title="AI 搜索 FAQ：让访客和生成式引擎快速理解 L8AI" desc="用直接问答回答企业负责人、CTO 和 AI 搜索引擎最常提出的问题" />
+      <div className="geo-faq-grid">
+        {geoFacts.map((item) => (
+          <article className="geo-faq-card" key={item.question}>
+            <h3>{item.question}</h3>
+            <p>{item.answer}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
@@ -658,6 +749,15 @@ function SectionTitle({ title, desc }: { title: string; desc: string }) {
   );
 }
 
+function StructuredData() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+    </>
+  );
+}
+
 export function App() {
   const hash = useHashRoute();
   const courseDetailMatch = hash.match(/^#\/courses\/([^?]+)/);
@@ -667,6 +767,7 @@ export function App() {
 
   return (
     <>
+      <StructuredData />
       <Header />
       {articleDetailMatch ? (
         <ArticleDetailPage articleId={articleDetailMatch[1]} />
@@ -679,12 +780,14 @@ export function App() {
       ) : (
         <main>
           <Hero />
+          <GeoAnswerBox />
           <Modules />
           <Method />
           <DoEngine />
           <Knowledge />
           <Resources />
           <Insights />
+          <GeoFAQ />
           <Cases />
           <CTA />
         </main>

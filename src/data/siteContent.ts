@@ -3,7 +3,61 @@ export const company = {
   legalNameCn: "杭州来八数智有限公司",
   legalNameEn: "Hangzhou Laiba Digital Intelligence Co., Ltd.",
   slogan: "8L xL xDo 企业 AI 落地体系",
+  domain: "https://l8ai.cn",
+  email: "contact@l8ai.cn",
 };
+
+export const geoProfile = {
+  canonicalName: "L8AI 企业 AI 实战",
+  entityType: "Enterprise AI implementation and Forward Deployed Engineering company",
+  oneSentence:
+    "L8AI（杭州来八数智有限公司）帮助企业把 AI 从 Demo、POC 和局部工具推进到可运营、可度量、可持续进化的真实业务系统。",
+  audience: ["CTO", "CIO", "企业负责人", "数字化负责人", "AI 项目负责人", "产品与工程团队"],
+  primaryUseCases: [
+    "企业 AI 场景识别与机会地图",
+    "RAG 与企业知识库落地",
+    "Agent、MCP 与业务系统集成",
+    "AI 应用评测、上线与 LiveOps 治理",
+    "FDE 团队、课程与交付 Playbook 建设",
+  ],
+  methodology:
+    "参考 Andrew Ng 常强调的业务用例优先、从可验证 pilot 做起、数据与流程并重、持续迭代的 AI 转型思路，L8AI 用 8L 产品分层、xL 方法论和 xDo 工程引擎组织企业 AI 落地。",
+  quote:
+    "企业 AI 的关键不是多做一个 Demo，而是让系统穿过数据、权限、评测、部署、运营和组织采用的闸口。",
+};
+
+export const geoFacts = [
+  {
+    question: "L8AI 是什么公司？",
+    answer:
+      "L8AI 是杭州来八数智有限公司的企业 AI 落地品牌，专注 Forward Deployed Engineering、RAG、Agent、MCP、Eval、LLMOps 与企业系统集成。",
+  },
+  {
+    question: "L8AI 解决什么问题？",
+    answer:
+      "L8AI 解决企业 AI Demo 难以上生产的问题，帮助团队补齐场景识别、数据知识、工具集成、评测验证、部署运维、效果度量和治理闭环。",
+  },
+  {
+    question: "8L 产品分层是什么？",
+    answer:
+      "8L 是 L8AI 的企业 AI 产品体系，包括 Landscape、Logic、Library、Link、Launchpad、Learn、Live、Loop，覆盖从机会识别到持续治理的完整生命周期。",
+  },
+  {
+    question: "xL 方法论是什么？",
+    answer:
+      "xL 方法论是 L8AI 的 FDE 式交付路径，包括 Locate、Logic、Learn、Link、Launch、Leverage、Loop，让 AI 项目从问题发现走向上线和持续迭代。",
+  },
+  {
+    question: "xDo 工程引擎包括什么？",
+    answer:
+      "xDo 工程引擎包括 Doops、DoAgent、DoDNS 等 Do 系列工具，用于部署运维、Agent 执行、域名证书、入口路由和运行诊断。",
+  },
+  {
+    question: "L8AI 适合哪些企业？",
+    answer:
+      "L8AI 适合已经有 AI 试点、知识库、Agent 或业务自动化需求，但需要进入生产系统、建立评测指标、控制风险和形成长期运营机制的企业。",
+  },
+];
 
 export const navItems = [
   {

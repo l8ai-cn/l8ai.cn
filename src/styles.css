@@ -303,6 +303,14 @@ button {
   letter-spacing: 0;
 }
 
+.geo-kicker {
+  margin: 0 0 14px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
 .hero-copy p {
   max-width: 540px;
   margin: 24px 0 0;
@@ -660,8 +668,97 @@ button {
   font-size: 14px;
 }
 
+.geo-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.geo-answer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.72fr);
+  gap: 30px;
+  align-items: stretch;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fbfdff, #fff);
+}
+
+.geo-answer-grid h2 {
+  max-width: 760px;
+  margin: 10px 0 0;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.22;
+}
+
+.geo-answer-grid p {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.geo-answer-grid blockquote {
+  margin: 18px 0 0;
+  padding: 16px 18px;
+  border-left: 4px solid var(--green);
+  background: #f3fbf8;
+  color: #17372d;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.geo-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.geo-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #bcd1f6;
+  border-radius: 999px;
+  color: var(--blue);
+  background: #f4f8ff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.geo-fact-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.geo-fact-list div {
+  padding: 16px;
+  border: 1px solid #e5edf8;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.geo-fact-list dt {
+  color: #7a8aa3;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.geo-fact-list dd {
+  margin: 8px 0 0;
+  color: #17243a;
+  font-size: 14px;
+  font-weight: 680;
+  line-height: 1.65;
+}
+
 .resources-section,
-.insights-section {
+.insights-section,
+.geo-faq-section {
   text-align: center;
 }
 
@@ -812,6 +909,36 @@ button {
   color: var(--blue);
   font-size: 14px;
   font-weight: 820;
+}
+
+.geo-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  text-align: left;
+}
+
+.geo-faq-card {
+  min-height: 196px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(13, 39, 85, 0.04);
+}
+
+.geo-faq-card h3 {
+  margin: 0;
+  color: #071225;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.geo-faq-card p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .article-list-hero,
@@ -1486,6 +1613,7 @@ button {
 
 @media (max-width: 1100px) {
   .hero-grid,
+  .geo-answer-grid,
   .course-hero-grid,
   .course-detail-hero-grid,
   .module-frame,
@@ -1494,6 +1622,7 @@ button {
   .knowledge-grid,
   .resource-grid,
   .article-grid,
+  .geo-faq-grid,
   .case-grid,
   .site-footer {
     grid-template-columns: repeat(2, 1fr);
@@ -1574,6 +1703,7 @@ button {
   }
 
   .hero-grid,
+  .geo-answer-grid,
   .course-hero-grid,
   .course-detail-hero-grid,
   .module-frame,
@@ -1582,6 +1712,7 @@ button {
   .knowledge-grid,
   .resource-grid,
   .article-grid,
+  .geo-faq-grid,
   .case-grid,
   .site-footer {
     grid-template-columns: 1fr;
@@ -1608,7 +1739,8 @@ button {
   }
 
   .article-card,
-  .resource-card {
+  .resource-card,
+  .geo-faq-card {
     min-height: auto;
   }
 
