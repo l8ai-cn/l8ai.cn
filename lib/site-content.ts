@@ -53,7 +53,7 @@ export const heroMetrics = [
   { value: "8", label: "产品矩阵层" },
   { value: "8", label: "方法维度" },
   { value: "6", label: "课程路径" },
-  { value: "5", label: "工程引擎" },
+  { value: "6", label: "工程引擎" },
 ]
 
 // ===== 8L 产品矩阵 =====
@@ -307,6 +307,19 @@ export const doTools: DoTool[] = [
     ],
   },
   {
+    id: "dosql",
+    icon: "database",
+    name: "DoSQL",
+    tagline: "数据查询 · 指标口径 · 分析取数",
+    desc: "面向企业数据查询、指标口径、权限边界和分析取数的工程引擎，让 AI 能安全理解业务数据并生成可审计的 SQL 查询。",
+    bullets: ["自然语言取数", "指标口径管理", "查询审计"],
+    features: [
+      { title: "语义查询", desc: "把业务问题转成受控 SQL，支持字段解释、查询预览和结果校验。" },
+      { title: "指标治理", desc: "沉淀指标口径、表关系、权限边界和常用分析模板。" },
+      { title: "安全审计", desc: "记录查询意图、SQL、执行结果和敏感字段访问，便于复盘。" },
+    ],
+  },
+  {
     id: "dosecurity",
     icon: "shield",
     name: "DoSecurity",
@@ -415,6 +428,7 @@ export const footerColumns: { title: string; links: { label: string; href: strin
       { label: "Doops", href: "/tools#doops" },
       { label: "DoAgent", href: "/tools#doagent" },
       { label: "DoDNS", href: "/tools#dodns" },
+      { label: "DoSQL", href: "/tools#dosql" },
       { label: "DoSecurity", href: "/tools#dosecurity" },
       { label: "DoProject", href: "/tools#doproject" },
     ],

@@ -5,7 +5,7 @@ import { useChat } from "@ai-sdk/react"
 import { DefaultChatTransport } from "ai"
 import { Icon } from "@/components/icon"
 
-const SUGGESTIONS = ["产品矩阵是什么？", "八维方法怎么落地？", "课程体系怎么设计？", "工程引擎有哪些？"]
+const SUGGESTIONS = ["产品矩阵是什么？", "八维方法怎么落地？", "DoSQL 做什么？", "工程引擎有哪些？"]
 
 function renderRich(text: string) {
   // 轻量渲染 **粗体**，其余按纯文本处理

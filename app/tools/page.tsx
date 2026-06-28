@@ -6,7 +6,7 @@ import { doTools } from "@/lib/site-content"
 export const metadata: Metadata = {
   title: "工程引擎",
   description:
-    "工程引擎由 Doops、DoAgent、DoDNS、DoSecurity、DoProject 组成，为企业 AI 应用提供部署运维、任务执行、入口治理、安全审计与项目交付能力。",
+    "工程引擎由 Doops、DoAgent、DoDNS、DoSQL、DoSecurity、DoProject 组成，为企业 AI 应用提供部署运维、任务执行、入口治理、数据查询、安全审计与项目交付能力。",
 }
 
 export default function ToolsPage() {
@@ -15,15 +15,16 @@ export default function ToolsPage() {
       <PageHeader
         eyebrow="工程引擎"
         title="工程引擎：支撑 AI 应用从开发到生产"
-        desc="工程引擎也称 Do 引擎，回答“系统如何真实跑起来、如何安全运行、如何持续交付”。Doops、DoAgent、DoDNS、DoSecurity、DoProject 分别处理部署运维、任务执行、入口路由、安全治理和项目闭环。"
+        desc="工程引擎也称 Do 引擎，回答“系统如何真实跑起来、如何安全运行、如何持续交付”。Doops、DoAgent、DoDNS、DoSQL、DoSecurity、DoProject 分别处理部署运维、任务执行、入口路由、数据查询、安全治理和项目闭环。"
       />
 
       <section className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             ["部署运维", "从代码、镜像、Kubernetes 到运行诊断，形成发布闭环。"],
             ["任务执行", "让 Agent 通过工具、队列和权限边界执行真实任务。"],
             ["入口治理", "统一域名、证书、Ingress、流量路由和可访问性验证。"],
+            ["数据查询", "把自然语言问题转成受控 SQL，统一指标口径和查询审计。"],
             ["安全审计", "统一权限、密钥、调用审计、风险策略和事件响应。"],
             ["项目交付", "把计划、任务、验收证据和复盘资产沉淀为项目闭环。"],
           ].map(([title, desc]) => (

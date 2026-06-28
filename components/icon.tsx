@@ -17,6 +17,7 @@ const paths: Record<string, string[]> = {
   circleCheck: ["M9 12l2 2 4-5", "M12 21a9 9 0 100-18 9 9 0 000 18z"],
   close: ["M6 6l12 12", "M18 6L6 18"],
   compass: ["M12 21a9 9 0 100-18 9 9 0 000 18z", "M15 9l-2 5-5 2 2-5z"],
+  database: ["M5 6c0-2 14-2 14 0s-14 2-14 0z", "M5 6v12c0 2 14 2 14 0V6", "M5 12c0 2 14 2 14 0"],
   external: ["M8 8h8v8", "M15 9l-7 7", "M5 5h6", "M5 5v14h14v-6"],
   gauge: ["M5 15a7 7 0 0114 0", "M12 15l4-4", "M6 19h12"],
   layers: ["M12 3l9 5-9 5-9-5z", "M3 12l9 5 9-5", "M3 16l9 5 9-5"],

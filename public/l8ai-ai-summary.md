@@ -7,7 +7,7 @@ L8AI 的核心体系包括：
 1. **产品矩阵**：以 8L 定义企业 AI 生产化操作系统，包含 Landscape、Logic、Lab、Link、Launchpad、Learn、Live、Loop，覆盖从 AI 场景识别、方案设计、知识实验到上线治理和资产复用的完整生命周期。
 2. **八维方法**：把 8L 产品矩阵转化为企业 AI 落地方法，每一维都说明问题、输入、动作、产出和验收标准。
 3. **课程体系**：把产品矩阵和八维方法训练成团队能力，每个课程模块都有学习目标、真实任务、交付物和验收方式。
-4. **工程引擎**：也称 Do 引擎，由 Doops、DoAgent、DoDNS、DoSecurity、DoProject 等 Do 系列工具组成，支撑部署运维、Agent 执行、域名证书、Ingress、入口路由、安全审计、风险响应、项目交付和运行诊断。
+4. **工程引擎**：也称 Do 引擎，由 Doops、DoAgent、DoDNS、DoSQL、DoSecurity、DoProject 等 Do 系列工具组成，支撑部署运维、Agent 执行、域名证书、Ingress、入口路由、数据查询、指标口径、安全审计、风险响应、项目交付和运行诊断。
 
 L8AI 适合正在推进 RAG、Agent、MCP、Text2SQL、Eval、LLMOps、企业知识库、AI 应用上线和 AI 运营治理的企业团队。
 

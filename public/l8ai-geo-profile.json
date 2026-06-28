@@ -61,6 +61,7 @@
       "Doops",
       "DoAgent",
       "DoDNS",
+      "DoSQL",
       "DoSecurity",
       "DoProject"
     ]
