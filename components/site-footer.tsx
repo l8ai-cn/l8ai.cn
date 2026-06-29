@@ -16,13 +16,28 @@ export function SiteFooter() {
             <div key={col.title}>
               <h3 className="text-sm font-semibold text-foreground">{col.title}</h3>
               <ul className="mt-3 space-y-2">
-                {col.links.map((link) => (
-                  <li key={link.href + link.label}>
-                    <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const isExternal = link.href.startsWith("http")
+
+                  return (
+                    <li key={link.href + link.label}>
+                      {isExternal ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link href={link.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           ))}

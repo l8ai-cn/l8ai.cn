@@ -97,7 +97,9 @@ export default function HomePage() {
           {doTools.map((tool) => (
             <Link
               key={tool.id}
-              href={`/tools#${tool.id}`}
+              href={tool.website ?? `/tools#${tool.id}`}
+              target={tool.website ? "_blank" : undefined}
+              rel={tool.website ? "noreferrer" : undefined}
               className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_18px_45px_rgba(12,41,92,0.1)]"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground">

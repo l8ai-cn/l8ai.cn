@@ -67,6 +67,16 @@ export default function ToolsPage() {
                     </li>
                   ))}
                 </ul>
+                {tool.website ? (
+                  <a
+                    href={tool.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-6 inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-background px-4 py-2 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/5"
+                  >
+                    访问 {tool.name} 官网 <Icon name="arrow" size={16} />
+                  </a>
+                ) : null}
               </div>
               <div className="grid gap-px bg-border sm:grid-cols-3">
                 {[

@@ -262,6 +262,7 @@ export type DoTool = {
   name: string
   tagline: string
   desc: string
+  website?: string
   bullets: string[]
   features: { title: string; desc: string }[]
 }
@@ -273,6 +274,7 @@ export const doTools: DoTool[] = [
     name: "Doops",
     tagline: "部署 · 运维 · 远程执行",
     desc: "面向部署、运维、远程执行和 Kubernetes 操作的工程入口，把 AI 应用从本地交付推向稳定生产环境。",
+    website: "https://doops.l8ai.cn/",
     bullets: ["远程运维入口", "集群发布", "运行态诊断"],
     features: [
       { title: "一键发布", desc: "标准化发布流水线，从代码到集群一步到位。" },
@@ -425,7 +427,7 @@ export const footerColumns: { title: string; links: { label: string; href: strin
   {
     title: "工程引擎",
     links: [
-      { label: "Doops", href: "/tools#doops" },
+      { label: "Doops", href: "https://doops.l8ai.cn/" },
       { label: "DoAgent", href: "/tools#doagent" },
       { label: "DoDNS", href: "/tools#dodns" },
       { label: "DoSQL", href: "/tools#dosql" },
